@@ -11,7 +11,7 @@ const Container = styled.div`
     ${mobile({padding: "0px", flexDirection: "column"})}
 `
 
-const Categorieees = () => {
+const Categories = () => {
   return (
     <Container>
         {categories.map(item=>(
@@ -21,4 +21,4 @@ const Categorieees = () => {
   )
 }
 
-export default Categorieees
+export default Categories

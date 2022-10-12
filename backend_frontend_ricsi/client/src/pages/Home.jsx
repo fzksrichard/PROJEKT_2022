@@ -1,6 +1,6 @@
 import React from 'react'
 import Ann from '../components/Announcement'
-import Categorieees from '../components/Categorieees'
+import Categorieees from '../components/Categories'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
