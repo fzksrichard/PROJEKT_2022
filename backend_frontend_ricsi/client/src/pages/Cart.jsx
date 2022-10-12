@@ -1,7 +1,7 @@
 import { Add, Remove } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
-import Ann from '../components/Ann'
+import Ann from '../components/Announcement'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { mobile } from '../responsive'

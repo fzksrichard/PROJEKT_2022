@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
-import Ann from "../components/Ann"
+import Ann from "../components/Announcement"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 import { Add, Remove } from '@material-ui/icons'

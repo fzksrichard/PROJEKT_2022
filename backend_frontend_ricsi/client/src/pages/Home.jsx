@@ -1,5 +1,5 @@
 import React from 'react'
-import Ann from '../components/Ann'
+import Ann from '../components/Announcement'
 import Categorieees from '../components/Categorieees'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'

@@ -14,10 +14,10 @@ const Container = styled.div`
     font-weight: 500;
 `
 //llala
-const Ann = () => {
+const Announcement = () => {
   return (
     <Container>Action!</Container>
   )
 }
 
-export default Ann
+export default Announcement
