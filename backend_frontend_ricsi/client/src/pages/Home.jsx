@@ -1,19 +1,19 @@
 import React from 'react'
-import Ann from '../components/Announcement'
+import Announcement from '../components/Announcement'
 import Categorieees from '../components/Categories'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
-import Slid from '../components/Slid'
+import Slider from '../components/Slider'
 
 const Home = () => {
   return (
 
     <div>
-        <Ann/>
+        <Announcement/>
         <Navbar/>
-        <Slid/>
+        <Slider/>
         <Categorieees/>
         <Products/>
         <Newsletter/>
