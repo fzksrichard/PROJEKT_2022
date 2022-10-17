@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="test.css">
+<script src="https://kit.fontawesome.com/c6aa69b3c7.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h4 class="nev">Név</h4>
+        <input type="text" placeholder="Add meg a neved" id="contact-name" onkeyup="validateName()">
+        <span id="nev-hiba"></span>
+        <h4 class="nev">Telefon</h4>
+        <input type="text" placeholder="Add meg a számod: +36 20-30 XXXX XXX" id="contact-phone" onkeyup="validatePhone()">
+        <span id="telefon-hiba"></span>
+        <h4 class="nev">Email</h4>
+        <input type="text" placeholder="Add meg az email-címed" id="contact-email" onkeyup="validateEmail()">
+        <span id="email-hiba"></span>
+        <button onclick="return validateForm()">Regisztráció</button>
+        <span id="regisztracios-hiba"></span>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#nev-hiba{
+    position: relative;
+    text-transform: capitalize;
+    top:2px;
+    color:red;
+}
+#telefon-hiba{
+    position: relative;
+    text-transform: capitalize;
+    top:2px;
+    color:red;
+}
+#email-hiba{
+    position: relative;
+    text-transform: capitalize;
+    top:2px;
+    color:red;
+}
+
+i{
+    color: seagreen;
+}

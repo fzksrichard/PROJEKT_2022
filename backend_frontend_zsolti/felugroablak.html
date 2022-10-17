@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="Felugróablak.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="profil.png" width=50px height=50px id="button2">
+    <div class="bg-modul">
+        <div class="modul-content">
+            <div class="close">+</div>
+            <div class="regisztraciofelirat"><h1 id="h1">Regisztráció</h1></div>
+            <div class="regisztracio">
+                <form>
+                    <div id="nev">
+                        <h4 class="nev">Név</h4>
+                        <input type="text" name="vezetek_nev" id="vezeteknev"><br>
+                        <label class="elsocimke">Vezetéknév</label>
+                        <input type="text" name="keresztnev_nev" id="keresztnev">
+                        <label class="masodikcimke">Keresztnév</label>
+                    </div>
+                    <h4 class="nev">Cég</h4>
+                        <input type="text" name="ceg" id="ceg"> <br>
+                    <h4 class="nev">Email</h4>
+                        <input type="text" name="email" id="email"> <br>
+                    <h4 class="nev">Telefon</h4>
+                        <input type="text" name="area_code" id="code"> 
+                        <input type="text" name="telefon" id="szam"> <br>
+                        <label class="area-code">Area Code </label>
+                        <label class="telefon-szam">Telefonszám</label>
+                    <h4 class="nev">Tárgy</h4>
+                    <select name="targy" class="option">
+                        <option disabled="disabled" selected="selected">Válassz</option>
+                        <option>Férfi</option>
+                        <option>Nő</option>
+                    </select>
+                    <h4 class="kezdo">Kezdő vagy?</h4>
+                    <label class="radio">
+                        <input type="radio" class="radio-one" checked="checked" name="">
+                        <span class="checkmark"></span>
+                        Igen
+                    </label>
+                    <label class="radio">
+                        <input type="radio" class="radio-two"  name="">
+                        <span class="checkmark"></span>
+                        Nem
+                    </label><br>
+                    <button onclick="myFunction()" type="submit">Regisztrálok</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('button2').addEventListener('click',
+        function(){
+            document.querySelector('.bg-modul').style.display ='flex';
+        });
+        document.querySelector('.close').addEventListener('click',
+        function(){
+            document.querySelector('.bg-modul').style.display ='none';
+        });
+        function myFunction() {
+        alert("Sikeresen kijeletkezett!");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+body{
+    background-color: #E5EBF1;
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+/* Lenyíló menü*/
+nav{
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+    float: right;
+    position: relative;
+    font-family: arial,verdana, tahoma, georgia;
+    font-size: 18px;
+}
+nav ul{
+    width: 100%;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 200px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    font-weight: bold;
+}
+.sub-menu-wrap.open-menu{
+    max-height: 200px;
+}
+.sub-menu{
+    background-color: lightgrey;
+    padding: 0px;
+    margin: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info img{
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.user-info h3{
+    font-weight: 500;
+}
+.user-pic{
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 0px 0;
+    padding: 0%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.sub-menu-link p{
+    width: 100%;
+    margin-left: 3px;   
+}
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5;
+    padding: 8px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.sub-menu-link span{
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-right: 5px;
+}
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+    transform: translateX(5px);
+    transition: 0.5s;
+}
+.sub-menu-1{
+    display: none;
+}
+.head ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background-color: #525356;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.header ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+}
+.header ul li:hover .sub-menu-1 ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+/*Felugró ablak*/
+.bg-modul{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7) ;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none;
+}
+.modul-content{
+    width:800px;
+    height:295px;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+/*Regisztráció/Belépés*/
+#regisztraciofelirat{
+    font-size: 20;
+    text-align: left;
+    margin-right: 400px;
+    margin-top: 50px;
+}
+.regisztraciofelirat{
+    width: 800px;
+    background-color: rgb(0, 0, 0,0.6);
+    margin:auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    border-left: 100px;
+}
+#h1{
+    margin-top: 15px;
+    margin-right: 325px;
+}
+.regisztracio{
+    background-color: rgb(0, 0, 0,0.5);
+    width: 800px;
+    margin: auto;
+}
+form{
+    padding: 10px;
+}
+#nev{
+    width: 100%;
+    height: 100px;
+}
+.nev{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color:white;
+    font-size: 18px;
+    font-weight: 700;
+}
+.teljesnev{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    width: 300px;
+    line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+#nev-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 400px;
+    top:-67px;
+    color:red;
+}
+#ceg-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 600px;
+    top:-67px;
+    color:red;
+}
+#regisztracios-hiba{
+    color: red;
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 310px;
+    top:5px;
+}
+#email-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 400px;
+    top:-67px;
+    color:red;
+}
+#telefon-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 400px;
+    top:-67px;
+    color:red;
+}
+#ceg{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    line-height: 40px;
+    width: 480px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.email{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    line-height: 40px;
+    width: 300px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+#code{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    line-height: 40px;
+    width: 60px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.szam{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    line-height: 40px;
+    width: 360px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.area-code{
+    position: relative;
+    color: #E5E5E5;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 200px;
+    top: -30px;
+}
+.telefon-szam{
+    position: relative;
+    color: #E5E5E5;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 240px;
+    top: -30px;
+}
+.option{
+    position: relative;
+    left: 200px;
+    top:-37px;
+    line-height: 40px;
+    width: 532px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    overflow: hidden;
+}
+.option option{
+    font-size: 20px;
+}
+.kezdo{
+    margin-left: 25px;
+    color: white;
+    font-size: 18px;
+}
+.radio{
+    display: inline-block;
+    padding-right: 70px ;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 15px;
+    color: white;
+}
+.radio input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+button{
+    background-color: #3BAF9F;
+    display: block;
+    margin: 20px 0px 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #366473;
+    padding: 14px 110px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25px;
+    margin-left: 220px;
+}
+button:hover{
+    background-color: #5390F5;
+}
+/*Menü*/
+#menu{
+    font-family: arial,verdana, tahoma, georgia;
+    font-size: 12px;
+    margin-top: 0px;
+    font-weight: bold;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    background-color: #666;
+    border-right: 1px solid #000;
+}
+#menu li{
+    float: left;
+}
+#menu li a{
+    padding: 20px 40px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-size: large;
+}
+#menu li a:hover{
+    background-color: #000;
+    color: #fff;
+}
+.active, menu ul li:hover{
+    background-color: #000;
+}
+/*h1,2,3,4,5,6*/
+h1{
+    text-align: right;
+    margin-right: 170px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+h2{
+    text-align: left;
+    margin-left: 80px;
+    font-size: 32px;
+    font-weight: bold;
+}
+h3{
+    margin-left: 550px;
+    font-size: 28px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+/*Image*/
+img{
+    margin-top: 0px;
+    margin-left: 50px;
+}
+/*div1,2,3,4,5,6,7*/
+#div1{
+    width: 800px;
+    height: 150px;
+    float: right;
+    margin-right: 20px;
+}
+#div2{
+    width: 400px;
+    height: 300px;
+    text-align:justify;
+    margin: 0px;
+}
+#div3{
+    width: 600px;
+    height: 600px;
+    margin-left: 30px;
+    text-align:justify;
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 150%;
+}
+#div4{
+    width: 620px;
+    height: 600px;
+    margin-right: 0px;
+    float: right;
+    margin-top: 10px;
+}
+#div5{
+    width: 1250px;
+    height: 550px;
+    margin-left: 90px;
+}
+#div6{
+    width: 900px;
+    height: 80px;
+    float: right;
+    margin-right: 20px;
+}
+#div7{
+    width: 400px;
+    height: 80px;
+    text-align:justify;
+    margin: 0px;
+    margin-left: 20px;
+}
+/*Insta, Face*/
+#instaface{
+    list-style: none;
+    float: right;
+    margin-top: 35px;
+    text-align: left;
+    padding-left: 0px;
+    margin-right: 40px;
+ }
+#instaface li{
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+#insta:hover{
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+}
+#face:hover{
+    margin-top: 10px ;
+}
+/*Referencia oldal referencia*/
+#referencia1{
+    width: 1250px;
+    height: 550px;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+/*Footer*/
+footer{
+    background-color: #525356;
+    margin: 0px auto;
+    padding: 5px;
+}
+#elerhetoseg{
+    font-family: arial,verdana, tahoma, georgia;
+    font-size: 20px;
+    margin-top: 0px;
+    font-weight: bold;
+    list-style: none;
+    padding: 0;
+    margin-left: 0px;
+}
+#elerhetoseg li{
+    float: left;
+    margin-left: 0px;
+    margin-top: 35px;
+}
+#elerhetoseg li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+#adatvedelem{
+    font-family: arial,verdana, tahoma, georgia;
+    font-size: 16px;
+    margin-top: 0px;
+    font-weight: bold;
+    list-style: none;
+    padding: 0;
+    margin-left: 0px;
+}
+#adatvedelem li{
+   text-decoration: none;
+   padding: 1px;
+}
+#adatvedelem li a{
+    text-decoration: none;
+    color: #fff;
+}
+#adatvedelem li a:hover{
+    font-weight: bolder;
+}
+#adatkezeles{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    margin: 20px;
+    padding: 5px;
+    line-height: 140%;
+    margin-bottom: 80px;
+    
+}
+#altalanos{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    margin: 20px;
+    padding: 5px;
+    line-height: 140%;
+    margin-bottom: 80px;
+}
+
+
+
