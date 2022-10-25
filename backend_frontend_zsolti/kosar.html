@@ -8,7 +8,7 @@
     <title id="t">Weboldal</title>
 </head>
 <body>
-    <nav>
+<nav>
         <img src="profil.png" width=50px height=50px class="user-pic" onclick="toggleMenu()">
         <div class="sub-menu-wrap" id="subMenu"> 
             <div class="sub-menu">
@@ -20,13 +20,17 @@
                     <p>Kosár</p>
                     <span>></span>
                 </a>
+                <a href="rendelesek.html" class="sub-menu-link">
+                    <p>Rendeléseim</p>
+                    <span>></span>
+                </a>
                 <a href="fooldal.html" onclick="myFunction()" class="sub-menu-link">
                     <p>Kijelentkezés</p>
                     <span>></span>
                 </a>
             </div>
         </div>
-    </nav>
+</nav>
 <br><br><br><br>
 <div id="div1">
     <div ><h1>YOU DESIGN, WE CREATE</h1></div>
@@ -40,7 +44,17 @@
 <div id="div2">
     <img src="LOGO3.png" width=400px height=250px>
 </div>
-<div id="div3" ></div>
+<div id="div3" >
+<p id="kosar">Kosár</p>
+ <div id="kosartartalom">
+    <div id="tervar">400 000 HUF</div>
+    <div id="tervszam">Weboldal terv 001</div>
+    <div id="eltavolit"> &#10006 Eltávolít</div>
+ </div>
+ <div id="fizetes">
+    <div id="fizetesgombszoveg"> <a href="fizetes.html">Tovább a fizetéshez</a> </div>
+ </div>
+</div>
 <footer> 
     <div id="div6">
         <ul id="elerhetoseg">
@@ -58,14 +72,6 @@
         </ul>
     </div>
 </footer>
-<script>
-    let subMenu = document.getElementById("subMenu");
-    function toggleMenu(){
-        subMenu.classList.toggle("open-menu")
-    }
-    function myFunction() {
-        alert("Sikeresen kijeletkezett!");
-    };
-</script>
+ <script src="script.js"></script>
 </body>
 </html>

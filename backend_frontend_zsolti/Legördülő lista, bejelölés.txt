@@ -1,0 +1,16 @@
+<select name="targy" class="option">
+            <option disabled="disabled" selected="selected">Válassz</option>
+            <option>Férfi</option>
+            <option>Nő</option>
+        </select>
+        <h4 class="kezdo">Kezdő vagy?</h4>
+        <label class="radio">
+            <input type="radio" class="radio-one" checked="checked" name="">
+            <span class="checkmark"></span>
+            Igen
+        </label>
+        <label class="radio">
+            <input type="radio" class="radio-two"  name="">
+            <span class="checkmark"></span>
+            Nem
+        </label><br>

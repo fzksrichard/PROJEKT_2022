@@ -2,10 +2,14 @@ var nevHiba = document.getElementById('nev-hiba');
 var cegHiba = document.getElementById('ceg-hiba');
 var emailHiba = document.getElementById('email-hiba');
 var telefonHiba = document.getElementById('telefon-hiba');
+var szekhelyHiba = document.getElementById('szekhely-hiba');
+var adoszamHiba = document.getElementById('adoszam-hiba');
+var cegjegyzekszamHiba = document.getElementById('cegjegyzekszam-hiba');
+var jelszoHiba = document.getElementById('jelszo-hiba');
 var regisztracioHiba = document.getElementById('regisztracios-hiba');
 let subMenu = document.getElementById("subMenu");
 function toggleMenu(){
-        subMenu.classList.toggle("open-menu")
+        subMenu.classList.toggle("open-menu");
 }
 function myFunction() {
     alert("Sikeresen kijeletkezett!");
@@ -20,7 +24,7 @@ function validateName(){
         nevHiba.innerHTML='Írjon teljes nevet';
         return false;
     }
-    nevHiba.innerHTML ='<i><img src="cheked.png"></img></i>';
+    nevHiba.innerHTML ='<i>&#10004</i>';
     return true;
 }
 function validatePhone(){
@@ -37,7 +41,16 @@ function validatePhone(){
         telefonHiba.innerHTML='Helytelen formátum';
         return false;
     }
-    telefonHiba.innerHTML ='<i><img src="cheked.png"></img></i>';
+    telefonHiba.innerHTML ='<i>&#10004</i>';
+    return true;
+}
+function validateCompany(){
+    var company = document.getElementById('contact-company').value;
+    if(company.length == 0){
+        cegHiba.innerHTML='Cég szükséges';
+        return false;
+    }
+    cegHiba.innerHTML ='<i>&#10004</i>';
     return true;
 }
 function validateEmail(){
@@ -46,16 +59,65 @@ function validateEmail(){
         emailHiba.innerHTML='email cím szükséges';
         return false;
     }
-    if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    if(!email.match(/^[A-Za-z0-9+_.-]+@(.+)$/)){
         emailHiba.innerHTML='Helytelen formátum';
         return false;
     }
-    emailHiba.innerHTML ='<i><img src="cheked.png"></img></i>';
+    emailHiba.innerHTML ='<i>&#10004</i>';
+    return true;
+}
+function validateArchdeaconate(){
+    var companyArchdeaconate = document.getElementById('contact-companyarchdeaconate').value;
+    if(companyArchdeaconate.length == 0){
+        szekhelyHiba.innerHTML='Székhely szükséges';
+        return false;
+    }
+    szekhelyHiba.innerHTML ='<i>&#10004</i>';
+    return true;
+}
+function validateTaxnumber(){
+    var companytaxnumber = document.getElementById('contact-taxnumber').value;
+    if(companytaxnumber.length == 0){
+        adoszamHiba.innerHTML='Adószám szükséges';
+        return false;
+    }
+    adoszamHiba.innerHTML ='<i>&#10004</i>';
+    return true;
+}
+function validateCompanyregnum(){
+    var companyregnum = document.getElementById('contact-companyregnum').value;
+    if(companyregnum.length == 0){
+        cegjegyzekszamHiba.innerHTML='Adószám szükséges';
+        return false;
+    }
+    cegjegyzekszamHiba.innerHTML ='<i>&#10004</i>';
+    return true;
+}
+function validatePassword(){
+    var pasword = document.getElementById('contact-password').value;
+    if(pasword.length == 0){
+        jelszoHiba.innerHTML='Jelszó szükséges';
+        return false;
+    }
+    jelszoHiba.innerHTML ='<i>&#10004</i>';
     return true;
 }
 function validateForm(){
-    if(!validateName() || !validatePhone() || !validateEmail()){
-        regisztracioHiba.innerHTML="Regisztrációs hiba"
+    regisztracioHiba.innerHTML='Regisztrációs hiba';
+    if(!validateName() || !validatePhone() || !validateCompany() || !validateEmail() || !validateArchdeaconate() || !validateTaxnumber() || !validateCompanyregnum() || !validatePassword() ){
+        alert("Sikertelen regisztráció")
         return false;
     }
+    else{
+        alert ("Sikeres regisztáció")
+    }
+}
+document.getElementById("tervezesbutton").onclick = function () {
+    location.href = "logintervezes_1.html";
+}
+function megrendeles(){
+    alert("Rendelését befogadtuk!");
+}
+function kosar(){
+    alert("Megrendelése bekrült a kosárba!");
 }

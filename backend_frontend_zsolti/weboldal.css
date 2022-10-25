@@ -39,7 +39,7 @@ nav ul li a{
     font-weight: bold;
 }
 .sub-menu-wrap.open-menu{
-    max-height: 200px;
+    max-height: 300px;
 }
 .sub-menu{
     background-color: lightgrey;
@@ -175,25 +175,55 @@ nav ul li a{
     border-radius: 15px 15px 0px 0px;
     border-left: 100px;
 }
+.bejelentkezesfelirat{
+    width: 700px;
+    background-color: rgb(0, 0, 0,0.6);
+    margin:auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    border-left: 100px;
+}
 #h1{
     margin-top: 15px;
     margin-right: 325px;
+}
+#h1_2{
+    margin-top: 15px;
+    margin-right: 250px;
 }
 .regisztracio{
     background-color: rgb(0, 0, 0,0.5);
     width: 800px;
     margin: auto;
+    height: 617px;
+}
+.bejelentkezes{
+    background-color: rgb(0, 0, 0,0.5);
+    width: 700px;
+    margin: auto;
+    height: 285px;
 }
 form{
     padding: 10px;
 }
+#bejelentkezesbutton{
+    margin-left: 200px;
+}
+#felhasználónév{
+    top:-50px;
+}
+#jelszo{
+    top:-50px;
+}
 #nev{
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 .nev{
     margin-left: 25px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 125px;
     color:white;
     font-size: 18px;
@@ -202,9 +232,108 @@ form{
 .teljesnev{
     position: relative;
     left: 200px;
-    top:-37px;
-    width: 300px;
+    top:-425px;
+    width: 250px;
     line-height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.ceg{
+    position: relative;
+    left: 200px;
+    top: -20px;
+    line-height: 40px;
+    width: 350px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.option{
+    position: relative;
+    left: 200px;
+    top:-25px;
+    line-height: 40px;
+    width: 400px;
+    height: 40px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    overflow: hidden;
+}
+.option option{
+    font-size: 20px;
+}
+.email{
+    position: relative;
+    left: 200px;
+    top:-23px;
+    line-height: 40px;
+    width: 355px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.szam{
+    position: relative;
+    left: 200px;
+    top:15px;
+    line-height: 40px;
+    width: 330px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.kezdo{
+    margin-left: 25px;
+    color: white;
+    font-size: 18px;
+}
+.szekhely{
+    position: relative;
+    left: 200px;
+    top: 15px;
+    line-height: 40px;
+    width: 330px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.adoszam{
+    position: relative;
+    left: 200px;
+    top: 15px;
+    line-height: 40px;
+    width: 330px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.cegjegyzekszam{
+    position: relative;
+    left: 200px;
+    top:15px;
+    line-height: 40px;
+    width: 370px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #555;
+}
+.jelszo{
+    position: relative;
+    left: 200px;
+    top:15px;
+    line-height: 40px;
+    width: 330px;
     border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
@@ -214,16 +343,16 @@ form{
     position: relative;
     text-transform: capitalize;
     font-size: 16px;
-    left: 400px;
-    top:-67px;
+    left: 370px;
+    top: -455px;
     color:red;
 }
 #ceg-hiba{
     position: relative;
     text-transform: capitalize;
     font-size: 16px;
-    left: 600px;
-    top:-67px;
+    left: 480px;
+    top:-53px;
     color:red;
 }
 #regisztracios-hiba{
@@ -238,39 +367,49 @@ form{
     position: relative;
     text-transform: capitalize;
     font-size: 16px;
-    left: 400px;
-    top:-67px;
+    left: 450px;
+    top:-53px;
     color:red;
 }
 #telefon-hiba{
     position: relative;
     text-transform: capitalize;
     font-size: 16px;
-    left: 400px;
-    top:-67px;
+    left: 380px;
+    top:-13px;
     color:red;
 }
-#ceg{
+#szekhely-hiba{
     position: relative;
-    left: 200px;
-    top:-37px;
-    line-height: 40px;
-    width: 480px;
-    border-radius: 6px;
-    padding: 0 22px;
+    text-transform: capitalize;
     font-size: 16px;
-    color: #555;
+    left: 410px;
+    top:-16px;
+    color:red;
 }
-.email{
+#adoszam-hiba{
     position: relative;
-    left: 200px;
-    top:-37px;
-    line-height: 40px;
-    width: 300px;
-    border-radius: 6px;
-    padding: 0 22px;
+    text-transform: capitalize;
     font-size: 16px;
-    color: #555;
+    left: 410px;
+    top:-16px;
+    color:red;
+}
+#cegjegyzekszam-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 463px;
+    top:-16px;
+    color:red;
+}
+#jelszo-hiba{
+    position: relative;
+    text-transform: capitalize;
+    font-size: 16px;
+    left: 463px;
+    top:-16px;
+    color:red;
 }
 #code{
     position: relative;
@@ -278,17 +417,6 @@ form{
     top:-37px;
     line-height: 40px;
     width: 60px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-}
-.szam{
-    position: relative;
-    left: 200px;
-    top:-37px;
-    line-height: 40px;
-    width: 360px;
     border-radius: 6px;
     padding: 0 22px;
     font-size: 16px;
@@ -310,43 +438,6 @@ form{
     left: 240px;
     top: -30px;
 }
-.option{
-    position: relative;
-    left: 200px;
-    top:-37px;
-    line-height: 40px;
-    width: 532px;
-    height: 40px;
-    border-radius: 6px;
-    padding: 0 22px;
-    font-size: 16px;
-    color: #555;
-    outline: none;
-    overflow: hidden;
-}
-.option option{
-    font-size: 20px;
-}
-.kezdo{
-    margin-left: 25px;
-    color: white;
-    font-size: 18px;
-}
-.radio{
-    display: inline-block;
-    padding-right: 70px ;
-    font-size: 25px;
-    margin-left: 25px;
-    margin-top: 15px;
-    color: white;
-}
-.radio input{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-}
 button{
     background-color: #3BAF9F;
     display: block;
@@ -358,10 +449,125 @@ button{
     outline: none;
     cursor: pointer;
     transition: 0.25px;
-    margin-left: 220px;
+    margin-left: 250px;
+    margin-top: 0px;
+    margin-bottom: 200px;
 }
 button:hover{
     background-color: #5390F5;
+}
+i{
+    color: green;
+}
+/*Tervezés*/
+#tervezesbutton{
+    background-color: #666;
+    display: block;
+    margin: 20px 0px 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid black;
+    padding: 20px 80px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25px;
+    margin-left: -30px;
+    margin-top: 80px;
+    margin-bottom: 200px;
+    font-size: 40px;
+    font-weight: bold;
+}
+#tervezesbutton:hover{
+    background-color: gray;
+}
+#lepes_1{
+    height:20px;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 40px;
+}
+#tervezesbutton a{
+    color:#000;
+    text-decoration: none;
+    
+}
+#fejlecvalaszto{
+    margin-top: 100px;
+    margin-left: 50px;
+    width: 500px;
+}
+.radio{
+    display: inline-block;
+    padding-right: 70px ;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 15px;
+    color: black;
+}
+.radio input{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+#szinvalaszto{
+    float: right;
+    width: 600px;
+    height: 400px;
+    margin-right: 100px;
+    margin-top: 140px;
+    padding: 10px;
+}
+#fejlecszinvalaszto{
+    font-size: 20px;
+}
+#select{
+    margin-top: 20px;
+}
+#lepes_1_1{
+    height:20px;
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 40px;
+}
+#menuvalaszto{
+    margin-left: 20px;
+    margin-top: 80px;
+}
+#lepes_2{
+    height:20px;
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 40px;
+}
+#torzsvalaszto{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+#lablecvalaszto{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+#kosarba{
+    background-color: #666;
+    width: 150px;
+    height: 45px;
+    background-color: #666;
+    margin-top: 20px;
+    margin-left: 600px;
+    border:2px solid #000;
+    margin-bottom: 50px;
+}
+#kosarba a{
+    text-decoration: none;
+    color: white;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-bottom: 2px;
 }
 /*Menü*/
 #menu{
@@ -475,6 +681,38 @@ img{
     margin: 0px;
     margin-left: 20px;
 }
+#div8{
+    width: 600px;
+    height: 200px;
+    margin-left: 450px;
+    text-align:justify;
+    margin-bottom: 200px;
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 150%;
+    font-size: 50px;
+}
+#div9{
+    width: 600px;
+    height: 200px;
+    margin-left: 450px;
+    text-align:justify;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-size: 22px;
+    line-height: 150%;
+    font-size: 50px;
+}
+#div10{
+    height: 700px;
+}
+#div11{
+    height: auto;
+}
+#div12{
+    height: 450px;
+    margin-left: 30px;
+}
 /*Insta, Face*/
 #instaface{
     list-style: none;
@@ -503,6 +741,195 @@ img{
     height: 550px;
     margin-left: 30px;
     margin-top: 100px;
+}
+/*Kosár*/
+#kosar{
+    margin-left: 45px;
+    font-size: 40px;
+}
+#kosartartalom{
+    width: 700px;
+    height: 100px;
+    background-color: lightgrey;
+    margin-left: 45px;
+    border:2px solid #000;
+}
+#tervszam{
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 200px;
+    height: 30px;
+}
+#statusz{
+    margin-top: 5px;
+    margin-left: 220px;
+    width: 130px;
+    height: 30px;
+    float: right;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+#tervar{
+    float: right;
+    width: 140px;
+    height: 30px;
+    margin-top: 5px;
+}
+#eltavolit{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+#datum{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+#sikeresdatum{
+    margin-top: 30px;
+    margin-right: 0px;
+}
+/*Fizetes*/
+#fizetes{
+    background-color: #666;
+    width: 250px;
+    height: 35px;
+    background-color: #666;
+    margin-top: 20px;
+    margin-left: 280px;
+    border:2px solid #000;
+}
+#fizetes:hover{
+    background-color: gray;
+ }
+ #fizetes a{
+     text-decoration: none;
+     color: white;
+     font-size: 30px;
+ }
+#fizetes_megrendeles{
+    background-color: #666;
+    width: 165px;
+    height: 35px;
+    background-color: #666;
+    margin-top: 20px;
+    margin-left: 280px;
+    border:2px solid #000;
+}
+#fizetes_megrendeles:hover{
+    background-color: gray;
+ }
+ #fizetes_megrendeles a{
+     text-decoration: none;
+     color: white;
+     font-size: 30px;
+ }
+#fizetesgomb{
+    color:white;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+#fizetesszoveg{
+    width: 755px;
+    height: 200px;
+    margin-left: 40px;
+    font-size: 22px;
+    text-align: justify;
+}
+#fizetesgombszoveg{
+    margin-left: 6px;
+}
+#rendelesgomb{
+    font-size: 40px;
+    margin-left: 6px;
+}
+#megrendelesgombszove{
+    margin-left: 6px;
+}
+/*Rendeles*/
+#rendeles{
+    background-color: #666;
+    width: 220px;
+    height: 40px;
+    background-color: #666;
+    margin-top: 10px;
+    margin-left: 280px;
+    border:2px solid #000;
+}
+#rendeles a{
+    text-decoration: none;
+    color: white;
+}
+/*Profil*/
+#profilom{
+    margin-left: 550px;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+#cegadat{
+    font-size: 30px;
+    margin: 30px;
+}
+#adat{
+    width: 400px;
+    height: 35px;
+    background-color: lightgray;
+    float: right;
+    margin-right: 700px;
+    border: 2px solid black;
+    margin-top: 0px;
+    
+}
+#adattartalom{
+    margin-left: 5px;
+    margin-top: 10px;
+}
+/*Sikeres megrendelés*/
+#sikeresrendeles_1{
+    font-size: 50px;
+    text-align: center;
+    width: 600px;
+    margin-left: 350px;
+}
+#sikeresrendeles_2{
+    font-size: 30px;
+    text-align: center;
+    width: 600px;
+    margin-left: 350px;
+    margin-top:20px;
+}
+#megrendeles{
+    width: 600px;
+    height: 150px;
+    background-color: lightgrey;
+    margin-left: 45px;
+    border:2px solid #000;
+    margin-top: 100px;
+    margin-left: 350px;
+
+}
+#megrendelesfelsosav{
+    width: 600px;
+    height: 40px;
+    background-color: #666;
+    color:white;
+    font-size: 30px;
+    text-align: center;
+}
+#megrendelesreszletek{
+    width: 600px;
+    height: 110px;
+    color:black;
+    font-size: 30px;
+    text-align: center;
+}
+#rendelesar{
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+#renedelesazonosito{
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 /*Footer*/
 footer{

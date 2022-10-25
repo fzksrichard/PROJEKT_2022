@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="weboldal.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="t">Weboldal</title>
+</head>
+<body>
+    <nav>
+        <img src="profil.png" width=50px height=50px class="user-pic" onclick="toggleMenu()">
+        <div class="sub-menu-wrap" id="subMenu"> 
+            <div class="sub-menu">
+                <a href="profil.html" class="sub-menu-link">
+                    <p>Profil</p>
+                    <span>></span>
+                </a>
+                <a href="kosar.html" class="sub-menu-link">
+                    <p>Kosár</p>
+                    <span>></span>
+                </a>
+                <a href="rendelesek.html" class="sub-menu-link">
+                    <p>Rendeléseim</p>
+                    <span>></span>
+                </a>
+                <a href="fooldal.html" onclick="myFunction()" class="sub-menu-link">
+                    <p>Kijelentkezés</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div id="div1">
+    <div ><h1>YOU DESIGN, WE CREATE</h1></div>
+    <ul id="menu">
+        <li class="active"><a href="loginfooldal.html">Főoldal</a></li>
+        <li ><a href="loginelerhetoseg.html">Elérhetőség</a></li>
+        <li><a href="logintervezes.html">Tervezés</a></li>
+        <li><a href="loginreferenciamunkak.html">Referencia munkáink</a></li>
+    </ul>
+    </div>
+    <div id="div2">
+    <img src="LOGO3.png" width=400px height=250px>
+    </div>
+    <div id="div11">
+        <div id="lepes_1">1. Lépés: Fejléc</div>
+        <div id="szinvalaszto">
+            <div id="select">
+                <div id="fejlecszinvalaszto">Szöveg színe</div>
+                <select name="targy" class="option">
+                    <option disabled="disabled" selected="selected">Válassz</option>
+                    <option>Kék</option>
+                    <option>Zöld</option>
+                    <option>Szürke</option>
+                    <option>Fekete</option>
+                    <option>Barna</option>
+                    <option>Piros</option>
+                    <option>Sárga</option>
+               </select>
+            </div>
+            <div id="select">
+                <div id="fejlecszinvalaszto">Menüszalag színe</div>
+                <select name="targy" class="option">
+                    <option disabled="disabled" selected="selected">Válassz</option>
+                    <option>Kék</option>
+                    <option>Zöld</option>
+                    <option>Szürke</option>
+                    <option>Fekete</option>
+                    <option>Barna</option>
+                    <option>Piros</option>
+                    <option>Sárga</option>
+               </select>
+            </div>
+            <div id="select">
+                <div id="fejlecszinvalaszto">Menüpontok színe</div>
+                <select name="targy" class="option">
+                    <option disabled="disabled" selected="selected">Válassz</option>
+                    <option>Kék</option>
+                    <option>Zöld</option>
+                    <option>Szürke</option>
+                    <option>Fekete</option>
+                    <option>Barna</option>
+                    <option>Piros</option>
+                    <option>Sárga</option>
+               </select>
+            </div>
+            <div id="select">
+                <div id="fejlecszinvalaszto">Háttér szín</div>
+                <select name="targy" class="option">
+                    <option disabled="disabled" selected="selected">Válassz</option>
+                    <option>Kék</option>
+                    <option>Zöld</option>
+                    <option>Szürke</option>
+                    <option>Fekete</option>
+                    <option>Barna</option>
+                    <option>Piros</option>
+                    <option>Sárga</option>
+               </select>
+            </div>
+        </div>
+        <div id="fejlecvalaszto">
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="fejlécop_1.png" alt="" width="350" height="100">
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="fejlécop_2.png" alt="" width="350" height="100">
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="fejlécop_3.png" alt="" width="350" height="100">
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="fejlécop_4.png" alt="" width="350" height="100">
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="fejlécop_5.png" alt="" width="350" height="100">
+            </label><br>
+        </div>
+        <div id="lepes_1">1.1 Lépés: Fejléc</div>
+        <div id="lepes_1_1">Hány menüpontot szeretne?</div>
+        <div id="menuvalaszto">
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                1 - 10 000Ft
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                2 - 20 000Ft
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                3 - 30 000Ft
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                4 - 40 000Ft
+            </label><br>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                5 - 50 000Ft
+            </label><br>    
+        </div>
+        <div id="lepes_2">2. Lépés: Törzs</div>
+        <div id="torzsvalaszto">
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_1.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_2.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_3.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_4.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_5.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_6.png" alt="" width="350" height="175">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="törzsop_7.png" alt="" width="350" height="175">
+            </label>
+        </div>
+        <div id="lepes_2">3. Lépés: Lábléc</div>
+        <div id="lablecvalaszto">
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="láblécop_1.png" alt="" width="350" height="100">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="láblécop_2.png" alt="" width="350" height="100">
+            </label>
+            <label class="radio">
+                <input type="radio" class="radio-two"  name="">
+                <span class="checkmark"></span>
+                <img src="láblécop_3.png" alt="" width="350" height="100">
+            </label>
+        </div>
+        <div id="kosarba">
+            <div id="rendelesgomb"> <a href="kosar.html" onclick=kosar()>Kosárba</a> </div>
+        </div>
+    </div>
+    </div>
+     
+    <footer> 
+    <div id="div6">
+        <ul id="elerhetoseg">
+            <li><a href=""><img src="telefonjel.png" width=15px height=17px> +36 20 256 1552</a></li>
+            <li><a href=""><img src="emailjel2.png" width=20px height=19px> dac@gmail.com</a></li>
+            <li><a href=""><img src="irodahelységjel.png" width=25px height=25px> 9011 Győr, Bárányréti út 41/B</a></li>
+        </ul>
+    </div>
+    <div id="div7">
+        <ul id="adatvedelem">
+            <li><a href="logingyik.html">GYIK</a></li>
+            <li><a href="loginadatvedelem.html">Adatvédelem</a></li>
+            <li><a href="loginimpresszum.html">Ipresszum</a></li>
+            <li><a href="loginaltalanos.html">Általános szerződési feltételek</a></li>
+        </ul>
+    </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

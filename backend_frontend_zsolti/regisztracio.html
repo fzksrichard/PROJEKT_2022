@@ -42,41 +42,56 @@
     <form>
         <div id="nev">
             <h4 class="nev">Név</h4>
+            <h4 class="nev">Cégnév</h4>
+            <h4 class="nev">Cégforma</h4>
+            <h4 class="nev">Email</h4>
+            <h4 class="nev">Telefon</h4>
+            <h4 class="nev">Székhely</h4>
+            <h4 class="nev">Adószám</h4>
+            <h4 class="nev">Cégjegyzékszám</h4>
+            <h4 class="nev">Jelszó</h4>
             <input type="text" placeholder="Add meg a neved" id="contact-name" onkeyup="validateName()" class="teljesnev"><br>
             <span id="nev-hiba"></span>
         </div>
         <div id="nev">
-            <h4 class="nev">Cég</h4>
-            <input type="text" name="ceg" id="ceg"><br>
-            <span id="ceg-hiba">Cég szükséges</span>
+            <input type="text" placeholder="Add meg a céged nevét" id="contact-company" onkeyup="validateCompany()" class="ceg"><br>
+            <span id="ceg-hiba"></span>
         </div>
-        <div>
-            <h4 class="nev">Email</h4>
-            <input type="text" placeholder="Add meg az email-címed" id="contact-email" onkeyup="validateEmail()" class="email"><br>
-            <span id="email-hiba"></span>
-        </div>
-        <h4 class="nev">Telefon</h4>
-            <input type="text" placeholder="Add meg a számod" id="contact-phone" onkeyup="validatePhone()" class="szam"><br>
-            <span id="telefon-hiba"></span>
-        <h4 class="nev">Tárgy</h4>
-        <select name="targy" class="option">
-            <option disabled="disabled" selected="selected">Válassz</option>
-            <option>Férfi</option>
-            <option>Nő</option>
+        <div id="nev">
+         <select name="targy" class="option">
+             <option disabled="disabled" selected="selected">Cégforma</option>
+             <option>Kft</option>
+             <option>Ev</option>
+             <option>Zrt</option>
+             <option>Nyrt</option>
+             <option>Bt</option>
+             <option>Kkt</option>
         </select>
-        <h4 class="kezdo">Kezdő vagy?</h4>
-        <label class="radio">
-            <input type="radio" class="radio-one" checked="checked" name="">
-            <span class="checkmark"></span>
-            Igen
-        </label>
-        <label class="radio">
-            <input type="radio" class="radio-two"  name="">
-            <span class="checkmark"></span>
-            Nem
-        </label><br>
-        <button type="submit">Regisztrálok</button>
-        <span id="regisztracios-hiba">Regisztrációs hiba</span>
+        <input type="text" placeholder="Add meg az email-címed" id="contact-email" onkeyup="validateEmail()" class="email"><br>
+        <span id="email-hiba"></span>
+        </div>
+        <div id="nev">
+            <input type="text" placeholder="Add meg a számod" id="contact-phone" onkeyup="validatePhone()"   class="szam"><br>
+            <span id="telefon-hiba"></span>
+        </div>
+        <div id="nev">
+            <input type="text" placeholder="Add meg a székhelyed" id="contact-companyarchdeaconate" onkeyup="validateArchdeaconate()"   class="szekhely"><br>
+            <span id="szekhely-hiba"></span>
+        </div>
+        <div id="nev">
+            <input type="text" placeholder="Add meg az adószámod" id="contact-taxnumber" onkeyup="validateTaxnumber()"   class="adoszam"><br>
+            <span id="adoszam-hiba"></span>
+        </div>
+        <div id="nev">
+            <input type="text" placeholder="Add meg a cégjegyzékszámod" id="contact-companyregnum" onkeyup="validateCompanyregnum()"   class="cegjegyzekszam"><br>
+            <span id="cegjegyzekszam-hiba"></span>
+        </div>
+        <div id="nev">
+            <input type="text" placeholder="Add meg a jelszavad" id="contact-password" onkeyup="validatePassword()"   class="jelszo"><br>
+            <span id="jelszo-hiba"></span>
+        </div><br><br><br>
+        <button type="submit" onclick="validateForm()">Regisztrálok</button>
+        <span id="regisztracios-hiba"></span>
     </form>
     </div>
     <br><br><br>
