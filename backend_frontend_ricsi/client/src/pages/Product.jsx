@@ -9,6 +9,8 @@ import { mobile } from '../responsive'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { publicRequest } from '../requestMethods'
+import { addProduct } from '../redux/cartRedux'
+import { useDispatch } from 'react-redux'
 
 const Container=styled.div`
     
@@ -125,8 +127,11 @@ const Button=styled.button`
 const Product = () => {
     const location=useLocation();
     const id=location.pathname.split("/")[2];
-  
     const [product, setProduct]=useState({});
+    const [quantity, setQuantity]=useState(1);
+    const [color, setColor]=useState("");
+    const [size, setSize]=useState("");
+    const dispatch=useDispatch();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -138,6 +143,17 @@ const Product = () => {
         getProduct();
       }, [id]);
 
+      const handleQuantity = (type) => {
+        if (type === "dec") {
+          quantity > 1 && setQuantity(quantity - 1);
+        } else {
+          setQuantity(quantity + 1);
+        }
+      };
+
+      const handleClick=()=>{
+        dispatch(addProduct({...product, quantity, color, size}));
+      }
 
     
     return (
@@ -156,12 +172,12 @@ const Product = () => {
                 <Filter>
                     <FilterTitle>Color</FilterTitle>
                     {product.color?.map((c)=>(
-                        <FilterColor color={c} key={c}/>
+                        <FilterColor color={c} key={c} onClick={()=>setColor(c)}/>
                     ))}
                 </Filter>
                 <Filter>
                     <FilterTitle>Size</FilterTitle>
-                    <FilterSize>
+                    <FilterSize onChange={(e)=>setSize(e.target.value)}>
                         {product.size?.map((s)=>(
                             <FilterSizeOption key={s}>{s}</FilterSizeOption>
                         ))}
@@ -169,13 +185,12 @@ const Product = () => {
                 </Filter>
             </FilterContainer>
             <AddContainer>
-
                 <AmountContainer>
-                    <Remove/>
-                    <Amount>1</Amount>
-                    <Add/>
+                    <Remove onClick={()=>handleQuantity("dec")}/>
+                    <Amount>{quantity}</Amount>
+                    <Add onClick={()=>handleQuantity("inc")}/>
                 </AmountContainer>
-                <Button>ADD TO CART</Button>
+                <Button onClick={handleClick}>ADD TO CART</Button>
             </AddContainer>
         </InfoContainer>
       </Wrapper>
