@@ -14,8 +14,7 @@ import { Logout } from "../redux/apiCalls";
 const Container = styled.div`
     height: 60px;
     ${mobile({ height: "50px" })}
-    /* border-bottom: 1px solid black;
-    background: url("https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-zoom-virtual-background-_Tcjok-d9b4.jpg"); */
+    border-bottom: 1px solid black;
 `
 
 const Wrapper = styled.div`
@@ -24,14 +23,6 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     ${mobile({ padding: "10px 0px" })}
-`
-
-const SearchContainer = styled.div`
-    border: 0.5px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
 `
 
 const Center = styled.div`
