@@ -13,7 +13,18 @@ import {
   addProductFailure,
   addProductStart,
   addProductSuccess,
+  
+
 } from "./productRedux";
+
+import {
+  getUserStart,
+  getUserSuccess,
+  getUserFailure,
+  deleteUserStart,
+  deleteUserSuccess,
+  deleteUserFailure,
+} from "./userRedux"
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -35,25 +46,48 @@ export const getProducts = async (dispatch) => {
   }
 };
 
+export const getUsers = async (dispatch) => {
+  dispatch(getUserStart());
+  try {
+    const res = await publicRequest.get("/users");
+    dispatch(getUserSuccess(res.data));
+  } catch (err) {
+    dispatch(getUserFailure());
+  }
+};
+
 export const deleteProduct = async (id, dispatch) => {
   dispatch(deleteProductStart());
   try {
-    // const res = await userRequest.delete(`/products/${id}`);
-    dispatch(deleteProductSuccess(id));
+    const res = await userRequest.delete(`/products/${id}`);
+    dispatch(deleteProductSuccess(res.data));
   } catch (err) {
     dispatch(deleteProductFailure());
+  }
+};
+
+export const deleteUser = async (id, dispatch) => {
+  dispatch(deleteUserStart());
+  try {
+     const res = await userRequest.delete(`/users/${id}`);
+    dispatch(deleteUserSuccess(res));
+  } catch (err) {
+    dispatch(deleteUserFailure());
   }
 };
 
 export const updateProduct = async (id, product, dispatch) => {
   dispatch(updateProductStart());
   try {
-    // update
-    dispatch(updateProductSuccess({ id, product }));
+    const res = await userRequest.put(`/products/${id}`,product)
+    dispatch(updateProductSuccess( res.data ));
   } catch (err) {
     dispatch(updateProductFailure());
   }
 };
+
+
+
 export const addProduct = async (product, dispatch) => {
   dispatch(addProductStart());
   try {
