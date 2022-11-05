@@ -11,8 +11,13 @@ import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "Projekt 2022 Admin"
+  }, []);
+  
   const admin = useSelector((state) => state.user.currentUser?.isAdmin);
   return (
     <Router>

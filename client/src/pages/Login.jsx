@@ -81,7 +81,7 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>Bejelentkezés</Title>
         <Form>
           <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)} />
           <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
@@ -96,4 +96,3 @@ const Login = () => {
 };
 
 export default Login;
- //disabled isfetching hibás (balázs)

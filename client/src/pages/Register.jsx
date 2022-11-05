@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useState } from "react";
+import { userRequest } from "../requestMethods";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -17,7 +20,8 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
-  ${mobile({width: "75%"})}
+  box-shadow: 0px 0px 15px black;
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -39,7 +43,7 @@ const Input = styled.input`
 
 const Agreement = styled.span`
   font-size: 12px;
-  margin: 20px 0px;
+  margin: 30px 0px;
 `;
 
 const Button = styled.button`
@@ -49,25 +53,119 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin: 10px 0 0 0;
+`;
+
+const Error = styled.span`
+  color: red;
+`;
+
+const Link = styled.a`
+  margin: 5px 0px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
+const Middle = styled.div`
+  text-align: center;
+  padding: 2px;
+  margin-top: 8px;
 `;
 
 const Register = () => {
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    passwordconfirm: ""
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  let x=10
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (data.password!==data.passwordconfirm){ x=20 }
+      else{
+      const { data: res } = await userRequest.post("/auth/register", data);
+      console.log(res.message);
+      navigate.push("/login");
+      }
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) { }
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
-          <Button>CREATE</Button>
+        <Title>Regisztráció</Title>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            placeholder="felhasználónév"
+            name="username"
+            onChange={handleChange}
+            value={data.username} required
+            pattern="^[A-Za-z0-9]{3,16}$"
+            onInvalid={(e) => e.target.setCustomValidity("A felhasználó név 3-16 karakterből állhat, és nem tartalmazhat speciális karaktereket!")}
+            onInput={(e) => e.target.setCustomValidity("")} />
+          <Error>{ }</Error>
+
+          <Input
+            placeholder="E-mail cím"
+            name="email"
+            type="email"
+            onChange={handleChange}
+            value={data.email} required
+            onInvalid={(e) => e.target.setCustomValidity("Kérem valós emailt adjon meg!")}
+            onInput={(e) => e.target.setCustomValidity("")} />
+          <Error></Error>
+
+          <Input
+            placeholder="jelszó"
+            name="password"
+            type="password"
+            onChange={handleChange}
+            value={data.password} required
+            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
+            onInvalid={(e) => e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
+            onInput={(e) => e.target.setCustomValidity("")} />
+          <Error></Error>
+
+          <Input placeholder="jelszó megerősítése"
+            name="passwordconfirm"
+            type="password"
+            onChange={handleChange}
+            value={data.passwordconfirm} required
+            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
+            onInvalid={(e) =>
+              e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
+            onInput={(e) => e.target.setCustomValidity("")} />
+          <Error></Error>
+          <Middle>
+            <Agreement>
+              A regisztrációval elfogadom az általános felhasználási feltételeket és tisztában vagyok a benne leírtakkal.
+              <b>
+                <Link href="https://www.pirex.hu/vasarloi-informaciok/altalanos-szerzodesi-feltetelek?gclid=Cj0KCQjwr-SSBhC9ARIsANhzu16iLl-EPADqQne0khH9POJtPkPZGh9RhzrADa-Y3m14f2LnqhrglCwaAmEKEALw_wcB">
+                  Tudj meg többet
+                </Link>
+              </b>
+            </Agreement>
+            <br />
+            <Button type="submit">Regisztrálok</Button>
+            {/* {x===20 && <Error>Something went wrong</Error>} */}
+          </Middle>
         </Form>
       </Wrapper>
     </Container>
