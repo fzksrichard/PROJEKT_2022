@@ -54,7 +54,7 @@ const Button = styled.button`
   background-color: teal;
   color: white;
   cursor: pointer;
-  margin: 10px 0 0 0;
+  margin-top: 10px;
 `;
 
 const Error = styled.span`
@@ -170,7 +170,7 @@ const Register = () => {
                   </Link>
                 </b>
               </Agreement>
-              <br />
+              
               <Button type="submit">Regisztrálok</Button>
             </Middle>
           </Form>
