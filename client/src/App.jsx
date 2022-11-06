@@ -16,8 +16,7 @@ import { useEffect } from "react";
 
 const App = () => {
   useEffect(() => { document.title = "Projekt 2022" }, []);
-  //const user = useSelector(state => state.user.currentUser); //BALÁZSNAK: belépve marad napokig
-  const user= null;
+  const user = useSelector(state => state.user.currentUser); //BALÁZSNAK: belépve marad napokig
   return (
     <Router>
       <Routes>

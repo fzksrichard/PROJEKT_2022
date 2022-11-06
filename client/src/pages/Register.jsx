@@ -3,6 +3,7 @@ import { mobile } from "../responsive";
 import { useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Container = styled.div`
   width: 100vw;
@@ -43,7 +44,7 @@ const Input = styled.input`
 
 const Agreement = styled.span`
   font-size: 12px;
-  margin: 30px 0px;
+  margin: 20px 0px;
 `;
 
 const Button = styled.button`
@@ -58,6 +59,8 @@ const Button = styled.button`
 
 const Error = styled.span`
   color: red;
+  font-size: 12px;
+  text-align-last: center;
 `;
 
 const Link = styled.a`
@@ -87,16 +90,17 @@ const Register = () => {
     setData({ ...data, [input.name]: input.value });
   };
 
-  let x=10
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (data.password!==data.passwordconfirm){ x=20 }
-      else{
-      const { data: res } = await userRequest.post("/auth/register", data);
-      console.log(res.message);
-      navigate.push("/login");
+      if (data.password !== data.passwordconfirm) { setErrorMessage('Hibás megerősített jelszó!'); }
+      else {
+        const { data: res } = await userRequest.post("/auth/register", data);
+        console.log(res.message);
+        navigate("/login");
       }
     } catch (error) {
       if (
@@ -108,68 +112,71 @@ const Register = () => {
   };
 
   return (
-    <Container>
-      <Wrapper>
-        <Title>Regisztráció</Title>
-        <Form onSubmit={handleSubmit}>
-          <Input
-            placeholder="felhasználónév"
-            name="username"
-            onChange={handleChange}
-            value={data.username} required
-            pattern="^[A-Za-z0-9]{3,16}$"
-            onInvalid={(e) => e.target.setCustomValidity("A felhasználó név 3-16 karakterből állhat, és nem tartalmazhat speciális karaktereket!")}
-            onInput={(e) => e.target.setCustomValidity("")} />
-          <Error>{ }</Error>
+    <div>
+      <Navbar />
+      <Container>
+        <Wrapper>
+          <Title>Regisztráció</Title>
+          <Form onSubmit={handleSubmit}>
+            <Input
+              placeholder="felhasználónév"
+              name="username"
+              onChange={handleChange}
+              value={data.username} required
+              pattern="^[A-Za-z0-9]{3,16}$"
+              onInvalid={(e) => e.target.setCustomValidity("A felhasználó név 3-16 karakterből állhat, és nem tartalmazhat speciális karaktereket!")}
+              onInput={(e) => e.target.setCustomValidity("")} />
+            <Error>{ }</Error>
 
-          <Input
-            placeholder="E-mail cím"
-            name="email"
-            type="email"
-            onChange={handleChange}
-            value={data.email} required
-            onInvalid={(e) => e.target.setCustomValidity("Kérem valós emailt adjon meg!")}
-            onInput={(e) => e.target.setCustomValidity("")} />
-          <Error></Error>
+            <Input
+              placeholder="E-mail cím"
+              name="email"
+              type="email"
+              onChange={handleChange}
+              value={data.email} required
+              onInvalid={(e) => e.target.setCustomValidity("Kérem valós emailt adjon meg!")}
+              onInput={(e) => e.target.setCustomValidity("")} />
+            <Error></Error>
 
-          <Input
-            placeholder="jelszó"
-            name="password"
-            type="password"
-            onChange={handleChange}
-            value={data.password} required
-            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
-            onInvalid={(e) => e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
-            onInput={(e) => e.target.setCustomValidity("")} />
-          <Error></Error>
+            <Input
+              placeholder="jelszó"
+              name="password"
+              type="password"
+              onChange={handleChange}
+              value={data.password} required
+              pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
+              onInvalid={(e) => e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
+              onInput={(e) => e.target.setCustomValidity("")} />
+            <Error></Error>
 
-          <Input placeholder="jelszó megerősítése"
-            name="passwordconfirm"
-            type="password"
-            onChange={handleChange}
-            value={data.passwordconfirm} required
-            pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
-            onInvalid={(e) =>
-              e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
-            onInput={(e) => e.target.setCustomValidity("")} />
-          <Error></Error>
-          <Middle>
-            <Agreement>
-              A regisztrációval elfogadom az általános felhasználási feltételeket és tisztában vagyok a benne leírtakkal.
-              <b>
-                <Link href="https://www.pirex.hu/vasarloi-informaciok/altalanos-szerzodesi-feltetelek?gclid=Cj0KCQjwr-SSBhC9ARIsANhzu16iLl-EPADqQne0khH9POJtPkPZGh9RhzrADa-Y3m14f2LnqhrglCwaAmEKEALw_wcB">
-                  Tudj meg többet
-                </Link>
-              </b>
-            </Agreement>
+            <Input placeholder="jelszó megerősítése"
+              name="passwordconfirm"
+              type="password"
+              onChange={handleChange}
+              value={data.passwordconfirm} required
+              pattern="^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9!@#$%^&*]{5,20}$"
+              onInvalid={(e) =>
+                e.target.setCustomValidity("A jelszó 5-20 karakterből kell, hogy álljon, és tartalmaznia kell számot!")}
+              onInput={(e) => e.target.setCustomValidity("")} />
+            <Error></Error>
             <br />
-            <Button type="submit">Regisztrálok</Button>
-            {/* {x===20 && <Error>Something went wrong</Error>} */}
-          </Middle>
-        </Form>
-      </Wrapper>
-    </Container>
-  );
+            <Middle>
+              {errorMessage && <Error style={{ textAlign: "left" }}>{errorMessage} <br /></Error>}
+              <Agreement>
+                A regisztrációval elfogadom az általános felhasználási feltételeket és tisztában vagyok a benne leírtakkal.&nbsp;
+                <b>
+                  <Link href="https://www.pirex.hu/vasarloi-informaciok/altalanos-szerzodesi-feltetelek?gclid=Cj0KCQjwr-SSBhC9ARIsANhzu16iLl-EPADqQne0khH9POJtPkPZGh9RhzrADa-Y3m14f2LnqhrglCwaAmEKEALw_wcB">
+                    Tudj meg többet
+                  </Link>
+                </b>
+              </Agreement>
+              <br />
+              <Button type="submit">Regisztrálok</Button>
+            </Middle>
+          </Form>
+        </Wrapper>
+      </Container>
+    </div>);
 };
 
 export default Register;

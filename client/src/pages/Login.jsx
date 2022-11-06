@@ -4,6 +4,7 @@ import {mobile} from "../responsive";
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -23,6 +24,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
+  box-shadow: 0px 0px 15px black;
   ${mobile({width: "75%"})}
 `;
 
@@ -71,12 +73,14 @@ const Error=styled.span`
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate=useNavigate();
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    navigate("/"); //
   };
   return (
     <Container>
@@ -85,10 +89,10 @@ const Login = () => {
         <Form>
           <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)} />
           <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
-          <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
+          <Button onClick={handleClick} disabled={isFetching}>Bejelentkezés</Button>
           {error && <Error>Something went wrong</Error>} 
-          <Link>DON'T REMEMBER PASSWORD?</Link>
-          <Link>CREATE NEW ACCOUNT</Link>
+          <Link>Elfelejtette a jelszavát?</Link>
+          <Link>Új fiók létrehozása</Link>
         </Form>
       </Wrapper>
     </Container>
