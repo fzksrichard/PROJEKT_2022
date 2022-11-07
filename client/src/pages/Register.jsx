@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useState } from "react";
 import { userRequest } from "../requestMethods";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { Alert } from 'react-alert';
 
 const Container = styled.div`
   width: 100vw;
@@ -63,7 +64,7 @@ const Error = styled.span`
   text-align-last: center;
 `;
 
-const Link = styled.a`
+const Link2 = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -99,8 +100,8 @@ const Register = () => {
       if (data.password !== data.passwordconfirm) { setErrorMessage('Hibás megerősített jelszó!'); }
       else {
         const { data: res } = await userRequest.post("/auth/register", data);
-        console.log(res.message);
-        navigate("/login");
+        alert("Sikeres regisztráció!")
+        navigate("/");
       }
     } catch (error) {
       if (
@@ -161,19 +162,22 @@ const Register = () => {
             <Error></Error>
             <br />
             <Middle>
-              {errorMessage && <Error style={{ textAlign: "left" }}>{errorMessage} <br /></Error>}
+              {errorMessage && <Error>{errorMessage} <br /></Error>}
               <Agreement>
                 A regisztrációval elfogadom az általános felhasználási feltételeket és tisztában vagyok a benne leírtakkal.&nbsp;
                 <b>
-                  <Link href="https://www.pirex.hu/vasarloi-informaciok/altalanos-szerzodesi-feltetelek?gclid=Cj0KCQjwr-SSBhC9ARIsANhzu16iLl-EPADqQne0khH9POJtPkPZGh9RhzrADa-Y3m14f2LnqhrglCwaAmEKEALw_wcB">
+                  <Link2 href="https://www.pirex.hu/vasarloi-informaciok/altalanos-szerzodesi-feltetelek?gclid=Cj0KCQjwr-SSBhC9ARIsANhzu16iLl-EPADqQne0khH9POJtPkPZGh9RhzrADa-Y3m14f2LnqhrglCwaAmEKEALw_wcB">
                     Tudj meg többet
-                  </Link>
+                  </Link2>
                 </b>
               </Agreement>
-              
+              <br/>
               <Button type="submit">Regisztrálok</Button>
             </Middle>
           </Form>
+          <Middle>
+          <Link to="/login"><Link2>Már van felhasználói fiókom</Link2></Link>
+        </Middle>
         </Wrapper>
       </Container>
     </div>);

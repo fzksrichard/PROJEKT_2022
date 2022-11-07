@@ -1,10 +1,12 @@
 import { MobileFriendly } from "@material-ui/icons";
 import styled from "styled-components";
-import {mobile} from "../responsive";
+import { mobile } from "../responsive";
 import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 
 
 
@@ -25,7 +27,7 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: white;
   box-shadow: 0px 0px 15px black;
-  ${mobile({width: "75%"})}
+  ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
@@ -59,15 +61,16 @@ const Button = styled.button`
   }
 `;
 
-const Link = styled.a`
+const Link2 = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
 `;
 
-const Error=styled.span`
+const Error = styled.span`
   color: red;
+  font-size: 12px;
 `
 
 const Login = () => {
@@ -76,25 +79,33 @@ const Login = () => {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
 
+  const [errorMessage, setErrorMessage] = useState('');
+
+
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    if(error){
+       setErrorMessage('Hibás felhasználónév vagy jelszó!');
+    }
   };
   return (
-    <Container>
-      <Wrapper>
-        <Title>Bejelentkezés</Title>
-        <Form>
-          <Input placeholder="username" onChange={(e)=>setUsername(e.target.value)} />
-          <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)} />
-          <Button onClick={handleClick} disabled={isFetching}>Bejelentkezés</Button>
-          {error && <Error>Something went wrong</Error>} 
-          <Link>Elfelejtette a jelszavát?</Link>
-          <Link>Új fiók létrehozása</Link>
-        </Form>
-      </Wrapper>
-    </Container>
-  );
+    <div>
+      <Navbar />
+      <Container>
+        <Wrapper>
+          <Title>Bejelentkezés</Title>
+          <Form>
+            <Input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
+            <Input placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)} />
+            <Button onClick={handleClick} disabled={isFetching}>Bejelentkezés</Button>
+            {setErrorMessage && <Error>{errorMessage}</Error>}
+            <Link2>Elfelejtette a jelszavát?</Link2>
+            <Link to="/register"><Link2>Új fiók létrehozása</Link2></Link>
+          </Form>
+        </Wrapper>
+      </Container>
+    </div>);
 };
 
 export default Login;

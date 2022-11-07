@@ -80,10 +80,8 @@ const Footer = () => {
   return (
     <Container>
         <Left>
-            <Logo>LAMA.</Logo>
-            <Desc>There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.</Desc>
+            <Logo>DAC</Logo>
+            <Desc>valamilyen szöveg a projektről jvdnkvjk dwpjnpdiwhi ihennfoed őwfjsmjfsni ufwsbof w opjwnddksdflfnjdsljfs  </Desc>
             <SocialContainer>
                 <SocialIcon color="3B5999">
                     <Facebook/>
@@ -100,25 +98,19 @@ const Footer = () => {
             </SocialContainer>
         </Left>
         <Center>
-            <Title>Useful Links</Title>
+            <Title>Hasznos linkek</Title>
             <List>
-                <ListItem>Home</ListItem>
-                <ListItem>Cart</ListItem>
-                <ListItem>Man Fashion</ListItem>
-                <ListItem>Woman Fashion</ListItem>
-                <ListItem>Accessories</ListItem>
-                <ListItem>My Account</ListItem>
-                <ListItem>Order Tracking</ListItem>
-                <ListItem>Wishlist</ListItem>
-                <ListItem>Wishlist</ListItem>
-                <ListItem>Terms</ListItem>
+                <ListItem>Adatvédelem</ListItem>
+                <ListItem>GYIK</ListItem>
+                <ListItem>Feltételek</ListItem>
+                <ListItem>Impresszum</ListItem>
             </List>
         </Center>
         <Right>
-            <Title>CONTACT</Title>
-            <ContactItem><Room style={{marginRight:"10px"}}/>622 Dixie Path, South Tobinchester 98336</ContactItem>
-            <ContactItem><Phone style={{marginRight:"10px"}}/>+1 234 56 78</ContactItem>
-            <ContactItem><MailOutline style={{marginRight:"10px"}}/>contact@lama.dev</ContactItem>
+            <Title>Elérhetőségek</Title>
+            <ContactItem><Room style={{marginRight:"10px"}}/>9011 Győr, Bárányréti út 41/B</ContactItem>
+            <ContactItem><Phone style={{marginRight:"10px"}}/>+36 20 256 1552</ContactItem>
+            <ContactItem><MailOutline style={{marginRight:"10px"}}/>dac@gmail.com</ContactItem>
             <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
         </Right>
     </Container>

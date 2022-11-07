@@ -6,6 +6,7 @@ import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import { Logout } from "../redux/apiCalls";
+import { Alert } from 'react-alert'
 
 const Container = styled.div`
     height: 60px;
@@ -55,6 +56,10 @@ const Logo = styled.div`
     ${mobile({ fontSize: "24px" })}
 `
 
+const Image = styled.img`
+    height: 40px;
+`
+
 const Right = styled.div`
      flex: 1;
      display: flex;
@@ -83,6 +88,7 @@ const Navbar = () => {
         localStorage.clear();
         Logout(dispatch);
         navigate("/");
+        alert("Sikeres kijelentkezés!")
     };
 
     return (
@@ -97,16 +103,31 @@ const Navbar = () => {
                 </Left>
                 <Center>
                     <Link style={{ textDecoration: "none", color: "black" }} to="/">
-                        <Logo>DAC</Logo>
+                        <Logo><Image src="https://i.postimg.cc/wvzF82KR/DAC.png"/></Logo>
                     </Link>
                 </Center>
                 <Right>
+                <Link style={{ textDecoration: "none" }} to={"/register"}>
+                        <MenuItem style={!user ? { display: "none" } : {}}>
+                            Tervezés
+                        </MenuItem>
+                    </Link>
+                <Link style={{ textDecoration: "none" }} to={"/register"}>
+                        <MenuItem>
+                            Rólunk
+                        </MenuItem>
+                    </Link>
+                    <Link style={{ textDecoration: "none" }} to={"/register"}>
+                        <MenuItem>
+                            Referenciák
+                        </MenuItem>
+                    </Link>
+
                     <Link style={{ textDecoration: "none" }} to={"/register"}>
                         <MenuItem style={user ? { display: "none" } : {}}>
                             Regisztráció
                         </MenuItem>
                     </Link>
-
                     <Link style={{ textDecoration: "none" }} to={"/login"}>
                         <MenuItem style={user ? { display: "none" } : {}}>
                             Bejelentkezés
