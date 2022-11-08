@@ -101,7 +101,7 @@ const Register = () => {
       else {
         const { data: res } = await userRequest.post("/auth/register", data);
         alert("Sikeres regisztráció!")
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       if (

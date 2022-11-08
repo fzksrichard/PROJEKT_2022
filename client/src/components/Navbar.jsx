@@ -11,6 +11,7 @@ import { Alert } from 'react-alert'
 const Container = styled.div`
     height: 60px;
     ${mobile({ height: "50px" })}
+    border-bottom: 1px solid black;
 `
 
 const Wrapper = styled.div`
@@ -117,7 +118,7 @@ const Navbar = () => {
                             Rólunk
                         </MenuItem>
                     </Link>
-                    <Link style={{ textDecoration: "none" }} to={"/register"}>
+                    <Link style={{ textDecoration: "none" }} to={"/reference"}>
                         <MenuItem>
                             Referenciák
                         </MenuItem>
@@ -128,6 +129,7 @@ const Navbar = () => {
                             Regisztráció
                         </MenuItem>
                     </Link>
+
                     <Link style={{ textDecoration: "none" }} to={"/login"}>
                         <MenuItem style={user ? { display: "none" } : {}}>
                             Bejelentkezés

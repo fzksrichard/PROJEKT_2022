@@ -5,6 +5,7 @@ import { login } from "../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { Alert } from 'react-alert'
 import Navbar from "../components/Navbar";
 
 
@@ -81,13 +82,12 @@ const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-    if(error){
-       setErrorMessage('Hibás felhasználónév vagy jelszó!');
-    }
+    if (error) {
+      setErrorMessage('Hibás felhasználónév vagy jelszó!');
+    }else{alert("Sikeres bejelentkezés!")}
   };
   return (
     <div>

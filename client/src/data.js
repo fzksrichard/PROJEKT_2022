@@ -22,6 +22,23 @@ export const sliderItems=[
     },
 ];
 
+export const sliderItems2=[
+  {
+      id: 1,
+      img: "https://i.postimg.cc/tCtWJY48/fodrasz.png",
+      title: "Magic Hair",
+      desc: "Fodrászat",
+      bg: "f5fafd",
+  },
+  {
+      id: 2,
+      img: "https://i.postimg.cc/PJqsDLkK/torta.png",
+      title: "Tortam hely",
+      desc: "Cukrászat",
+      bg: "fcf1ed",
+  },
+];
+
 export const categories = [
     {
       id: 1,

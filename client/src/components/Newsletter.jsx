@@ -50,10 +50,10 @@ const Button=styled.button`
 const Newsletter = () => {
   return (
     <Container>
-        <Title>Newsletter</Title>
-        <Desc>Get timely updates from your favorite products.</Desc>
+        <Title>Hírlevél</Title>
+        <Desc>Kapj naprakész információkat legújabb ajánlatainkról</Desc>
         <InputContainer>
-            <Input placeholder="Your email"/>
+            <Input placeholder="E-mail címed"/>
             <Button>
                 <Send/>
             </Button>
