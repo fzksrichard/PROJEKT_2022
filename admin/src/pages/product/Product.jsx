@@ -81,7 +81,7 @@ export default function Product() {
   const product = useSelector((state) =>
     state.product.products.find((product) => product._id === productId)
   );
- 
+
   const MONTHS = useMemo(
     () => [
       "Jan",
