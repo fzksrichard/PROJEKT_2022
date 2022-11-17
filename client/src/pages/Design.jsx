@@ -158,16 +158,6 @@ const Design = () => {
     e.preventDefault();
     dispatch(addProduct({ ...data }));
     Navigate("/cart")
-    /* try {
-      const { data: res } = await userRequest.post("/sitedesigns", data);
-      alert("Siker!")
-    } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) { }
-    } */
   }
 
   return (
