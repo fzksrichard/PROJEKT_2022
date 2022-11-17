@@ -14,8 +14,8 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-    if(admin)
-    { History.push("/home")}
+    if(username==="admin" || admin)
+    { History.push("/welcome")}
       
     else {
     }

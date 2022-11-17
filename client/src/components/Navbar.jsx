@@ -108,12 +108,12 @@ const Navbar = () => {
                     </Link>
                 </Center>
                 <Right>
-                <Link style={{ textDecoration: "none" }} to={"/register"}>
+                <Link style={{ textDecoration: "none" }} to={"/design"}>
                         <MenuItem style={!user ? { display: "none" } : {}}>
                             Tervezés
                         </MenuItem>
                     </Link>
-                <Link style={{ textDecoration: "none" }} to={"/register"}>
+                <Link style={{ textDecoration: "none" }} to={"/about"}>
                         <MenuItem>
                             Rólunk
                         </MenuItem>

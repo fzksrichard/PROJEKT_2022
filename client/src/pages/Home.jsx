@@ -5,13 +5,13 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
-import Slider from '../components/Slider'
+import Slider3 from '../components/Slider3'
 
 const Home = () => {
   return (
     <div>
         <Navbar/>
-        <Slider/>
+        <Slider3/>
         <Categories/>
         <Products/>
         <Newsletter/>

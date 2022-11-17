@@ -1,7 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import { useState } from "react";
 import styled from "styled-components";
-import { sliderItems, sliderItems2 } from "../data";
+import { sliderItems } from "../data";
 import { mobile } from "../responsive";
 
 
@@ -12,7 +12,6 @@ const Container = styled.div`
     position: relative;
     overflow: hidden;
     ${mobile({display: "none"})}
-    border: 1px solid black;
 `;
 
 const Arrow = styled.div`
@@ -34,7 +33,7 @@ const Arrow = styled.div`
 `;
 
 const Wrapper=styled.div`
-    height: 80%;
+    height: 100%;
     display: flex;
     transform:translateX(${(props)=>props.slideIndex*-100}vw);
     transition: all 1.5s ease; //nyílra kattintáskor animáció
@@ -51,14 +50,11 @@ const Slide=styled.div`
 const ImgContainer=styled.div`
     flex: 1;
     height: 100%;
-    display: flex;
-  justify-content: center;
+
 `;
 
 const Image=styled.img`
-   height: 90%;
-   margin: auto;
-  display: block;
+    height: 80%;
 `;
 const InfoContainer=styled.div`
     flex: 1;
@@ -67,7 +63,6 @@ const InfoContainer=styled.div`
 
 const Title =styled.h1`
     font-size: 70px;
-    text-align: center;
 `;
 
 const Desc =styled.p`
@@ -75,7 +70,6 @@ const Desc =styled.p`
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 3px;
-    text-align: center;
 `;
 
 const Button =styled.button`
@@ -83,18 +77,16 @@ const Button =styled.button`
     font-size:20px;
     background-color: transparent;
     cursor: pointer;
-    margin-left:auto;
-    margin-right:auto;
 `;
 
-const Slider2 = () => {
+const Slider3 = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleCLick = (direction) => {
         if(direction==="left"){
             setSlideIndex(slideIndex>0 ? slideIndex-1 : 2)
         }
         else{
-            setSlideIndex(slideIndex<1 ? slideIndex+1 : 0);
+            setSlideIndex(slideIndex<2 ? slideIndex+1 : 0);
         }
     };
     return (
@@ -103,7 +95,7 @@ const Slider2 = () => {
             <ArrowLeftOutlined/>
         </Arrow>
         <Wrapper slideIndex={slideIndex}>
-            {sliderItems2.map((item)=>(
+            {sliderItems.map((item)=>(
             <Slide bg ={item.bg} key={item.id}>
                 <ImgContainer>
                     <Image src={item.img}/>
@@ -111,6 +103,7 @@ const Slider2 = () => {
                 <InfoContainer>
                     <Title>{item.title}</Title>
                     <Desc>{item.desc}</Desc>
+                    <Button>SHOW NOW</Button> 
                 </InfoContainer>
             </Slide>
             ))}
@@ -121,4 +114,5 @@ const Slider2 = () => {
     </Container>
   )
 }
-export default Slider2
+
+export default Slider3

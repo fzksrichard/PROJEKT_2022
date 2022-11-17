@@ -37,7 +37,7 @@ function App() {
         <Route path="/welcome">
             <Welcome />
           </Route>
-          <Route exact path="/analytics">
+          <Route path="/analytics">
             <Analytics />
           </Route>
           <Route path="/users">

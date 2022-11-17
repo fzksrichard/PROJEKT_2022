@@ -176,7 +176,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest.post("/checkout/payment", { //itt a probléma?
+        const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
@@ -267,10 +267,12 @@ const Cart = () => {
               image="https://i.postimg.cc/wvzF82KR/DAC.png"
               billingAddress
               shippingAddress
-              description={`Your total is $${cart.total}`}
-              amount={cart.total * 100}
+              currency='huf'
+              description={`Fizetendő összeg: ${cart.total} Ft`}
+              amount={cart.total*100}
               token={onToken}
               stripeKey={KEY}
+              
             >
               <Button style={cart.total === 0 ? { display: "none" } : {}}>
                 Megrendelés

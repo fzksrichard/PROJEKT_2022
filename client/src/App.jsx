@@ -14,6 +14,8 @@ import {
 import { useSelector } from "react-redux"
 import { useEffect } from "react";
 import Reference from "./pages/Reference";
+import Design from "./pages/Design";
+import AboutUs from "./pages/AboutUs";
 
 const App = () => {
   useEffect(() => { document.title = "Projekt 2022" }, []);
@@ -25,6 +27,8 @@ const App = () => {
         <Route path="/products/:category" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/reference" element={<Reference />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/design" element={<Design />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
