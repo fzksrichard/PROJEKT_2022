@@ -93,12 +93,6 @@ const Option = styled.option`
   background-color: ${props => props.color};
 `
 
-const Error = styled.span`
-  font-size: 12px;
-  padding: 3px;
-  color: red;
-`
-
 
 const Design = () => {
   const dispatch = useDispatch();
