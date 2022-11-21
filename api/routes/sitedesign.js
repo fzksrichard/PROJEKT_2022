@@ -3,7 +3,7 @@ const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = requir
 
 const router=require("express").Router();
 
-router.post("/", verifyToken, async (req, res)=>{
+router.post("/", async (req, res)=>{
     const newSiteDesign=new SiteDesign(req.body);
     try {
         const savedSiteDesign=await newSiteDesign.save();
