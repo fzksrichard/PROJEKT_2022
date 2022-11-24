@@ -11,6 +11,8 @@ const SiteDesignSchema=new mongoose.Schema(
         menuitemsArray:{type: Array},
         desc:{type: String, required: true},
         target: {type: String, required: true},
+        responsive: {type: Boolean, required: true},
+        logo: {type: Boolean, required: true},
     }, 
     {timestamps: true}
 );

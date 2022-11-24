@@ -6,7 +6,6 @@ import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 import { Logout } from "../redux/apiCalls";
-import { Alert } from 'react-alert'
 
 const Container = styled.div`
     height: 60px;

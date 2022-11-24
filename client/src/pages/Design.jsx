@@ -8,12 +8,14 @@ import Newsletter from '../components/Newsletter'
 import { useNavigate, Link } from "react-router-dom";
 import { userRequest } from "../requestMethods";
 import { useSelector } from 'react-redux'
+import FormInputSub from '../components/FormInputSub'
+
 
 const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150vh;
+    height: 120vh;
     background: linear-gradient(
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.3)
@@ -27,8 +29,9 @@ const Form = styled.form`
   background-color: white;
   padding: 0px 60px;
   border-radius: 10px;
-  border: 1px solid black;
   width: 30vw;
+  overflow-y: scroll;
+  height: 90vh;
 `
 
 const Title = styled.h1`
@@ -52,22 +55,32 @@ const Button = styled.button`
 
 `
 
+const SelectsContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0;
+`
+
 const SelectContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px 0px 15px 0px;
+    justify-content: space-around;
 `
 
 const Select = styled.select`
-margin: 5px 10px 5px 5px;
+`
+
+const Label = styled.label`
+  margin-right: 5px;
+  font-size: 15px;
 `
 
 const Option = styled.option`
   background-color: ${props => props.color};
 `
 
-const Error=styled.span`
+const Error = styled.span`
   font-size: 12px;
   padding: 3px;
   color: red;
@@ -85,9 +98,11 @@ const Design = () => {
     color: "fehér",
     menuitems: 0,
     menuitemsdesc: "",
-    menuitemsArray:[],
+    menuitemsArray: [],
     desc: "",
     target: "",
+    responsive: false,
+    logo: false
   });
   const [inputfieldsToAdd, setInputfieldsToAdd] = useState(0);
 
@@ -99,43 +114,44 @@ const Design = () => {
     setData({ ...data, [input.name]: input.value });
     setInputfieldsToAdd(input.value)
   };
-  
-  const[helpArray, setHelpArray] = useState([]);
+
+  const [helpArray, setHelpArray] = useState([]);
 
   const handleChange3 = (event, index) => {
     const newHelpArray = [...helpArray];
     newHelpArray[index] = event.target.value
     setHelpArray(newHelpArray)
     setData({ ...data, menuitemsArray: newHelpArray });
-}
+  }
 
+  const handleClick = (ev) => {
+    setData({ ...data, [ev.target.name]: ev.target.checked });
+  };
 
+  const fields = [];
+  for (let i = 1; i <= inputfieldsToAdd; i++) {
+    fields.push(<FormInputSub label={`${i}. menüpont`} placeholder={`${i}. menüpont`} type="text" id={i} key={i} value={data.menuitemsArray[i - 1]} onChange={(ev) => handleChange3(ev, i - 1)} />);
+  }
 
-
-   const fields = [];
-   for (let i = 1; i <= inputfieldsToAdd; i++) {
-     fields.push(<FormInput placeholder={`${i}. menüpont`} type="text" id={i} key={i} name="menuitemsArray" value={data.menuitemsArray[i-1]} onChange={(ev) => handleChange3(ev, i-1)} />);
-   }
-
-   function addDays(date, days) {
+  function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
   }
 
   let yourDate = new Date()
-  yourDate=addDays(yourDate, 30)
-  yourDate=yourDate.toISOString().split('T')[0]
+  yourDate = addDays(yourDate, 30)
+  yourDate = yourDate.toISOString().split('T')[0]
 
-/*   const handleClick=()=>{
-    dispatch(addProduct({...product, quantity, color, size}));
-  } */
+  /*   const handleClick=()=>{
+      dispatch(addProduct({...product, quantity, color, size}));
+    } */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const { data: res } = await userRequest.post("/sitedesigns", data);
-        alert("Siker!")
+      const { data: res } = await userRequest.post("/sitedesigns", data);
+      alert("Siker!")
     } catch (error) {
       if (
         error.response &&
@@ -161,23 +177,31 @@ const Design = () => {
             pattern="^[A-Za-z0-9]{2,16}$"
             onInvalid={(e) => e.target.setCustomValidity("Valós weboldalcímet adjon meg!")}
             onInput={(e) => e.target.setCustomValidity("")} />
+          <SelectsContainer>
             <SelectContainer>
-            <label>Weboldal típusa: </label>
+              <Label>Weboldal típusa: </Label>
               <Select name="type" onChange={handleChange}>
                 <Option value="webáruház">Webáruház</Option>
                 <Option value="hírportál">Hírportál</Option>
                 <Option value="portfólió">Portfólió</Option>
                 <Option value="blog">Blog</Option>
+                <Option value="fórum">Közösségi média, fórum</Option>
               </Select>
-              <label>Színvilág: </label>
+            </SelectContainer>
+            <SelectContainer>
+              <Label>Színvilág: </Label>
               <Select name="color" onChange={handleChange}>
                 <Option value="piros" color="red">Piros</Option>
                 <Option value="kék" color="blue">Kék</Option>
                 <Option value="sárga" color="yellow">Sárga</Option>
                 <Option value="Fehér" color="white">Fehér</Option>
+                <Option value="lila" color="purple">Lila</Option>
+                <Option value="szürke" color="gray">Szürke</Option>
+                <Option value="zöld" color="green">Zöld</Option>
               </Select>
             </SelectContainer>
-            <FormInput
+          </SelectsContainer>
+          <FormInput
             label="Weboldal jellemzése"
             placeholder="jellemzés"
             name="desc"
@@ -187,7 +211,7 @@ const Design = () => {
             required
             onInvalid={(e) => e.target.setCustomValidity("")}
             onInput={(e) => e.target.setCustomValidity("")} />
-            <FormInput
+          <FormInput
             label="Menüpontok száma"
             placeholder="0-6"
             type="number"
@@ -198,7 +222,7 @@ const Design = () => {
             required
             onInvalid={(e) => e.target.setCustomValidity("Lehetséges menüpontok száma max 6!")}
             onInput={(e) => e.target.setCustomValidity("")} />
-            {inputfieldsToAdd>0 && inputfieldsToAdd<7 && fields}
+          {inputfieldsToAdd > 0 && inputfieldsToAdd < 7 && fields}
           <FormInput
             label="Célközönség"
             placeholder="pl. korosztály, nem, földrajzi elhelyezkedés"
@@ -208,7 +232,17 @@ const Design = () => {
             value={data.target} required
             onInvalid={(e) => e.target.setCustomValidity("")}
             onInput={(e) => e.target.setCustomValidity("")} />
-            <FormInput
+          <SelectsContainer>
+            <SelectContainer>
+            <Label>Reszponzivitás</Label>
+            <input type="checkbox" name="responsive" onClick={(ev) => handleClick(ev)} />
+            </SelectContainer>
+            <SelectContainer>
+            <Label>Logó terveztetés</Label>
+            <input type="checkbox" name="logo" onClick={(ev) => handleClick(ev)} />
+            </SelectContainer>
+          </SelectsContainer>
+          <FormInput
             label="Határidő"
             name="deadline"
             type="date"
