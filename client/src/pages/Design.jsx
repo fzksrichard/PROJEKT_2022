@@ -9,6 +9,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { userRequest } from "../requestMethods";
 import { useSelector } from 'react-redux'
 import FormInputSub from '../components/FormInputSub'
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 
 const Container = styled.div`
@@ -90,6 +92,7 @@ const Error = styled.span`
 const Design = () => {
 
   const currentUser = useSelector((state) => state.user.currentUser);
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     userId: currentUser._id,
     title: "",
@@ -143,9 +146,10 @@ const Design = () => {
   yourDate = addDays(yourDate, 30)
   yourDate = yourDate.toISOString().split('T')[0]
 
-  /*   const handleClick=()=>{
-      dispatch(addProduct({...product, quantity, color, size}));
-    } */
+  const handleClickKuldes = () => {
+    dispatch(addProduct({ ...data }));
+  };
+  console.log(data);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -251,7 +255,7 @@ const Design = () => {
             value={data.deadline} required
             onInvalid={(e) => e.target.setCustomValidity("Kérem adjon meg egy határidőt!")}
             onInput={(e) => e.target.setCustomValidity("")} />
-          <Button type="submit">Rendelés előkészítése</Button>
+          <Button type="submit" onClick={handleClickKuldes}>Rendelés előkészítése</Button>
         </Form>
       </Container>
       <Newsletter />

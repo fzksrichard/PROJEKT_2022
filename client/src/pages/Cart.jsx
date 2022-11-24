@@ -230,6 +230,25 @@ const Cart = () => {
                     </ProductId>
                     <b>Válaszott szín:</b>
                     <ProductColor color={product.color} />
+                    <ProductSize
+                    
+                    >
+                      <b>Weboldal tipusa:  </b> {product.type}
+                    </ProductSize>
+                    <ProductSize
+                    
+                    >
+                      <b>Weboldal Leirása:  </b> {product.desc}
+                    </ProductSize><ProductSize
+                    
+                    >
+                      <b>Weboldal Céltipusa:  </b> {product.target}
+                    </ProductSize>
+                    <ProductSize
+                    
+                    >
+                      <b>Weboldal reszponziv-e? :  </b> {product.responsive.value}
+                    </ProductSize>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -267,7 +286,7 @@ const Cart = () => {
               image="https://i.postimg.cc/wvzF82KR/DAC.png"
               billingAddress
               shippingAddress
-              currency='huf'
+              currency='HUF'
               description={`Fizetendő összeg: ${cart.total} Ft`}
               amount={cart.total*100}
               token={onToken}
