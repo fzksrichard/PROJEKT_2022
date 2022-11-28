@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import FormInput from '../components/FormInput'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import { userRequest } from "../requestMethods";
 import { useSelector } from 'react-redux'
 import FormInputSub from '../components/FormInputSub'
@@ -93,6 +93,7 @@ const Design = () => {
 
   const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
+  const Navigate=useNavigate();
   const [data, setData] = useState({
     userId: currentUser._id,
     title: "",
@@ -148,6 +149,7 @@ const Design = () => {
 
   const handleClickKuldes = () => {
     dispatch(addProduct({ ...data }));
+    Navigate("/cart")
   };
   console.log(data);
 

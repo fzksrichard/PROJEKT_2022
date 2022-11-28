@@ -173,6 +173,23 @@ const Cart = () => {
     setStripeToken(token);
   };
 
+let totalcost=0
+let cost=0
+
+  for (let i = 0; i < cart.products.length; i++) {
+    let design=cart.products[i]
+    switch (design.type) {
+      case "webáruház": cost+=10000; break;
+      case "hírportál": cost+=15000; break;
+      case "portfólió": cost+=20000; break;
+      case "blog": cost+=5000; break;
+      case "fórum": cost+=1000; break;
+    }
+    design.cost=cost
+    totalcost+=cost
+    cost=0
+  }
+
   useEffect(() => {
     const makeRequest = async () => {
       try {
@@ -200,54 +217,46 @@ const Cart = () => {
     <Container>
       <Navbar />
       <Wrapper>
-        <Title>KOSÁR TARTALMA</Title>
+        <Title>TERV</Title>
         <Top>
           <Link to="/">
             <TopButton>
-              VÁSÁRLÁS <br /> FOLYTATÁSA
+              TERVEZÉS <br /> FOLYTATÁSA
             </TopButton>
           </Link>
           <TopButton onClick={handleDelete} type="filled">
-            KOSÁR TÖRLÉSE
+            TERV TÖRLÉSE
           </TopButton>
         </Top>
         <Bottom>
           <Info>
             <Empty style={cart.total !== 0 ? { display: "none" } : {}}>
-              A kosár üres!
+              Nincs terv!
             </Empty>
 
             {cart.products.map((product) => (
               <Product>
                 <ProductDetail>
-                  <Image src={product.img} />
+                  <Image src="https://www.cascadewebdesigns.com/wp-content/uploads/2020/07/Internet-platforms.png" />
                   <Details>
                     <ProductName>
-                      <b>Termék neve:</b> {product.title}
+                      <b>Weboldal neve:</b> {product.title}
                     </ProductName>
-                    <ProductId>
+                    {/*                     <ProductId>
                       <b>Termék azonosító:</b> {product._id}
-                    </ProductId>
+                    </ProductId> */}
                     <b>Válaszott szín:</b>
                     <ProductColor color={product.color} />
-                    <ProductSize
-                    
-                    >
+                    <ProductSize>
                       <b>Weboldal tipusa:  </b> {product.type}
                     </ProductSize>
-                    <ProductSize
-                    
-                    >
+                    <ProductSize>
                       <b>Weboldal Leirása:  </b> {product.desc}
-                    </ProductSize><ProductSize
-                    
-                    >
+                    </ProductSize><ProductSize>
                       <b>Weboldal Céltipusa:  </b> {product.target}
                     </ProductSize>
-                    <ProductSize
-                    
-                    >
-                      <b>Weboldal reszponziv-e? :  </b> {product.responsive.value}
+                    <ProductSize>
+                      <b>Weboldal reszponziv-e? :  </b> {product.responsive ? "Igen" : "Nem" }
                     </ProductSize>
                   </Details>
                 </ProductDetail>
@@ -256,7 +265,7 @@ const Cart = () => {
                     <ProductAmount>{product.quantity}</ProductAmount>
                   </ProductAmountContainer>
                   <ProductPrice>
-                    $ {product.price * product.quantity}
+                    {product.cost} Ft
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -264,10 +273,10 @@ const Cart = () => {
             <Hr />
           </Info>
           <Summary>
-            <SummaryTitle>RENDELÉS ÖSSZEGZÉSE</SummaryTitle>
+            <SummaryTitle>TERV ÖSSZEGZÉSE</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Termékek ára</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>{totalcost} Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Szállítási költség</SummaryItemText>
@@ -279,7 +288,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Teljes összeg</SummaryItemText>
-              <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+              <SummaryItemPrice>{totalcost} Ft</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="DAC rendelés"
@@ -288,10 +297,10 @@ const Cart = () => {
               shippingAddress
               currency='HUF'
               description={`Fizetendő összeg: ${cart.total} Ft`}
-              amount={cart.total*100}
+              amount={cart.total * 100}
               token={onToken}
               stripeKey={KEY}
-              
+
             >
               <Button style={cart.total === 0 ? { display: "none" } : {}}>
                 Megrendelés
