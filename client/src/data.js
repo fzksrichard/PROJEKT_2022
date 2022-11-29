@@ -33,7 +33,7 @@ export const sliderItems2=[
   {
       id: 2,
       img: "https://i.postimg.cc/PJqsDLkK/torta.png",
-      title: "Tortam hely",
+      title: "Habcsók",
       desc: "Cukrászat",
       bg: "fcf1ed",
   },

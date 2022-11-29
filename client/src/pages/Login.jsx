@@ -98,7 +98,7 @@ const Login = () => {
           <Form>
             <Input placeholder="username" onChange={(e) => setUsername(e.target.value)} />
             <Input placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)} />
-            <Button onClick={handleClick} disabled={isFetching}>Bejelentkezés</Button>
+            <Button onClick={handleClick} /* disabled={isFetching} */>Bejelentkezés</Button>
             {setErrorMessage && <Error>{errorMessage}</Error>}
             <Link2>Elfelejtette a jelszavát?</Link2>
             <Link to="/register"><Link2>Új fiók létrehozása</Link2></Link>

@@ -95,11 +95,10 @@ const Design = () => {
   const dispatch = useDispatch();
   const Navigate=useNavigate();
   const [data, setData] = useState({
-    userId: currentUser._id,
     title: "",
     deadline: "",
     type: "webáruház",
-    color: "fehér",
+    color: "white",
     menuitems: 0,
     menuitemsdesc: "",
     menuitemsArray: [],
@@ -147,15 +146,16 @@ const Design = () => {
   yourDate = addDays(yourDate, 30)
   yourDate = yourDate.toISOString().split('T')[0]
 
-  const handleClickKuldes = () => {
+/*   const handleClickKuldes = () => {
     dispatch(addProduct({ ...data }));
     Navigate("/cart")
-  };
-  console.log(data);
+  }; */
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    dispatch(addProduct({ ...data }));
+    Navigate("/cart")
+    /* try {
       const { data: res } = await userRequest.post("/sitedesigns", data);
       alert("Siker!")
     } catch (error) {
@@ -164,7 +164,7 @@ const Design = () => {
         error.response.status >= 400 &&
         error.response.status <= 500
       ) { }
-    }
+    } */
   }
 
   return (
@@ -197,13 +197,13 @@ const Design = () => {
             <SelectContainer>
               <Label>Színvilág: </Label>
               <Select name="color" onChange={handleChange}>
-                <Option value="piros" color="red">Piros</Option>
-                <Option value="kék" color="blue">Kék</Option>
-                <Option value="sárga" color="yellow">Sárga</Option>
-                <Option value="Fehér" color="white">Fehér</Option>
-                <Option value="lila" color="purple">Lila</Option>
-                <Option value="szürke" color="gray">Szürke</Option>
-                <Option value="zöld" color="green">Zöld</Option>
+                <Option value="red" color="red">Piros</Option>
+                <Option value="blue" color="blue">Kék</Option>
+                <Option value="yellow" color="yellow">Sárga</Option>
+                <Option value="white" color="white">Fehér</Option>
+                <Option value="purple" color="purple">Lila</Option>
+                <Option value="gray" color="gray">Szürke</Option>
+                <Option value="green" color="green">Zöld</Option>
               </Select>
             </SelectContainer>
           </SelectsContainer>
@@ -257,7 +257,7 @@ const Design = () => {
             value={data.deadline} required
             onInvalid={(e) => e.target.setCustomValidity("Kérem adjon meg egy határidőt!")}
             onInput={(e) => e.target.setCustomValidity("")} />
-          <Button type="submit" onClick={handleClickKuldes}>Rendelés előkészítése</Button>
+          <Button type="submit" /* onClick={handleClickKuldes} */>Rendelés előkészítése</Button>
         </Form>
       </Container>
       <Newsletter />

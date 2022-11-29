@@ -3,6 +3,8 @@ const mongoose=require("mongoose");
 const SiteDesignSchema=new mongoose.Schema(
     {
         userId: {type: String, required: true},
+        designs:[
+        {
         title: {type: String, required: true},
         deadline: {type: Date, required: true},
         type: {type: String, required: true},
@@ -13,6 +15,12 @@ const SiteDesignSchema=new mongoose.Schema(
         target: {type: String, required: true},
         responsive: {type: Boolean, required: true},
         logo: {type: Boolean, required: true},
+        },
+        ],
+        amount: {type:Number, required: true},
+        address:{type:Object, required: true},
+        status: {type:String, default: "pending"},
+        
     }, 
     {timestamps: true}
 );

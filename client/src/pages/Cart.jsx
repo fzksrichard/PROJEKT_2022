@@ -175,8 +175,9 @@ const Cart = () => {
 
 let totalcost=0
 let cost=0
-
-  for (let i = 0; i < cart.products.length; i++) {
+let costperorder=[]
+let i=0
+/*   for (let i = 0; i < cart.products.length; i++) {
     let design=cart.products[i]
     switch (design.type) {
       case "webáruház": cost+=10000; break;
@@ -188,24 +189,41 @@ let cost=0
     design.cost=cost
     totalcost+=cost
     cost=0
-  }
+  } */
+
+  cart.products.map((product)=>{
+    switch (product.type) {
+      case "webáruház": cost+=10000; break;
+      case "hírportál": cost+=15000; break;
+      case "portfólió": cost+=20000; break;
+      case "blog": cost+=5000; break;
+      case "fórum": cost+=1000; break;
+    }
+    if (product.responsive) cost+=10000
+    if (product.logo) cost+=10000
+    cost+=product.menuitems*5000
+    costperorder[i++]=cost
+    totalcost+=cost
+    cost=0
+  })
+  i=0
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
         const res = await userRequest.post("/checkout/payment", {
           tokenId: stripeToken.id,
-          amount: cart.total * 100,
+          amount: totalcost * 100,
         });
         Navigate("/success", {
-          state: { stripeData: res.data, products: cart },
+          state: { stripeData: res.data, products: cart, totalordercost: totalcost },
         });
       } catch { }
     };
 
     stripeToken && makeRequest();
 
-  }, [stripeToken, cart.total, Navigate, cart]);
+  }, [stripeToken, totalcost, Navigate, cart]);
 
 
 
@@ -217,9 +235,9 @@ let cost=0
     <Container>
       <Navbar />
       <Wrapper>
-        <Title>TERV</Title>
+        <Title>WEBOLDAL TERV</Title>
         <Top>
-          <Link to="/">
+          <Link to="/design">
             <TopButton>
               TERVEZÉS <br /> FOLYTATÁSA
             </TopButton>
@@ -242,9 +260,12 @@ let cost=0
                     <ProductName>
                       <b>Weboldal neve:</b> {product.title}
                     </ProductName>
-                    {/*                     <ProductId>
-                      <b>Termék azonosító:</b> {product._id}
-                    </ProductId> */}
+                    <ProductName>
+                      <b>Menüpontok száma:</b> {product.menuitems}
+                    </ProductName>
+                    <ProductName>
+                      <b>Határidő:</b> {product.deadline}
+                    </ProductName>
                     <b>Válaszott szín:</b>
                     <ProductColor color={product.color} />
                     <ProductSize>
@@ -252,11 +273,15 @@ let cost=0
                     </ProductSize>
                     <ProductSize>
                       <b>Weboldal Leirása:  </b> {product.desc}
-                    </ProductSize><ProductSize>
+                    </ProductSize>
+                    <ProductSize>
                       <b>Weboldal Céltipusa:  </b> {product.target}
                     </ProductSize>
                     <ProductSize>
                       <b>Weboldal reszponziv-e? :  </b> {product.responsive ? "Igen" : "Nem" }
+                    </ProductSize>
+                    <ProductSize>
+                      <b>Szükséges logó is? :  </b> {product.logo ? "Igen" : "Nem" }
                     </ProductSize>
                   </Details>
                 </ProductDetail>
@@ -265,7 +290,7 @@ let cost=0
                     <ProductAmount>{product.quantity}</ProductAmount>
                   </ProductAmountContainer>
                   <ProductPrice>
-                    {product.cost} Ft
+                    {costperorder[i++]} Ft
                   </ProductPrice>
                 </PriceDetail>
               </Product>
@@ -280,11 +305,11 @@ let cost=0
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Szállítási költség</SummaryItemText>
-              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+              <SummaryItemPrice>2000 Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Kedvezmény</SummaryItemText>
-              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+              <SummaryItemPrice>2000 Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Teljes összeg</SummaryItemText>
@@ -296,13 +321,13 @@ let cost=0
               billingAddress
               shippingAddress
               currency='HUF'
-              description={`Fizetendő összeg: ${cart.total} Ft`}
-              amount={cart.total * 100}
+              description={`Fizetendő összeg: ${totalcost} Ft`}
+              amount={totalcost * 100}
               token={onToken}
               stripeKey={KEY}
 
             >
-              <Button style={cart.total === 0 ? { display: "none" } : {}}>
+              <Button style={totalcost === 0 ? { display: "none" } : {}}>
                 Megrendelés
               </Button>
             </StripeCheckout>

@@ -11,7 +11,7 @@ import { userRequest } from "../requestMethods";
 const Success = (e) => {
   const location = useLocation();
   const data = location.state.stripeData;
-  console.log(data)
+  const totalcost=location.state.totalordercost
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -27,23 +27,30 @@ const Success = (e) => {
   useEffect(() => {
     const createOrder = async () => {
       try {
-        const res = await userRequest.post("/orders", {
+        const res = await userRequest.post("/sitedesigns", {
           userId: currentUser._id,
-          products: cart.products.map((item) => ({
-            productId: item._id,
-            quantity: item._quantity,
+          designs: cart.products.map((item) => ({
+            title: item.title,
+            deadline: item.deadline,
+            type: item.type,
+            color: item.color,
+            menuitems: item.menuitems,
+            menuitemsArray: item.menuitemsArray,
+            desc: item.desc,
+            target: item.target,
+            responsive: item.responsive,
+            logo: item.logo,  
           })),
-          amount: cart.total,
+          amount: totalcost,
           address: data.billing_details.address,
         });
-        console.log(res.data);
         setOrderId(res.data._id);
       } catch (err) {
         console.log(err);
       }
     };
     data && createOrder();
-  }, [cart, data, currentUser]);
+  }, [cart, data, totalcost, currentUser]);
 
   return (
     <div>
