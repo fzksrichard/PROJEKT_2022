@@ -10,7 +10,8 @@ import { Logout } from "../redux/apiCalls";
 const Container = styled.div`
     height: 60px;
     ${mobile({ height: "50px" })}
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black;
+    background: url("https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-zoom-virtual-background-_Tcjok-d9b4.jpg"); */
 `
 
 const Wrapper = styled.div`
@@ -21,11 +22,11 @@ const Wrapper = styled.div`
     ${mobile({ padding: "10px 0px" })}
 `
 
-const Left = styled.div`
+/* const Left = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
-`
+` */
 
 const Language = styled.span`
     font-size: 14px;
@@ -48,7 +49,7 @@ const Input = styled.input`
 
 const Center = styled.div`
      flex: 1;
-     text-align: center;
+     align-items: flex-start;
 `
 
 const Logo = styled.div`
@@ -69,10 +70,13 @@ const Right = styled.div`
 
 `
 const MenuItem = styled.div`
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     margin-left: 25px;
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
+    &:hover {
+        font-weight: bold;
+}
 `
 
 
@@ -94,19 +98,24 @@ const Navbar = () => {
     return (
         <Container>
             <Wrapper>
-                <Left>
+                {/* <Left>
                     <Language>HU</Language>
                     <SearchContainer>
                         <Input placeholder="Keresés" />
                         <Search style={{ color: "gray", fontSize: 16 }} />
                     </SearchContainer>
-                </Left>
+                </Left> */}
                 <Center>
                     <Link style={{ textDecoration: "none", color: "black" }} to="/">
                         <Logo><Image src="https://i.postimg.cc/wvzF82KR/DAC.png"/></Logo>
                     </Link>
                 </Center>
                 <Right>
+                <Link style={{ textDecoration: "none" }} to={"/"}>
+                        <MenuItem>
+                            Főoldal
+                        </MenuItem>
+                    </Link>
                 <Link style={{ textDecoration: "none" }} to={"/design"}>
                         <MenuItem style={!user ? { display: "none" } : {}}>
                             Tervezés

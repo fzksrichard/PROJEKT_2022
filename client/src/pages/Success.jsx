@@ -62,6 +62,7 @@ const Success = (e) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        background: "url(https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?w=2000)"
       }}
     >
       {orderId

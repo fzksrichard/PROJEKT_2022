@@ -9,10 +9,19 @@ const Container = styled.div`
 `
 
 const Input = styled.input`
-    padding:15px;
     margin: 10px 0px;
     border-radius: 5px;
-    border: 1px solid gray;
+    width: 95%;
+color: rgb(36, 35, 42);
+font-size: 15px;
+padding: 8px 16px;
+border: 2px solid lightgray;
+box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+background: rgb(251, 251, 251);
+transition: all 0.1s ease 0s;
+:focus{
+    border: 2px solid rgb(124, 138, 255);
+}
 `
 
 const Label=styled.label`

@@ -8,7 +8,9 @@ const Container = styled.div`
     height: 80vh;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   align-items: center;
+  background: radial-gradient(circle, rgba(63,212,251,0.45451684091605393) 0%, rgba(234,70,252,0.300455216266194) 100%);
 `
 
 const Title = styled.h1`
@@ -25,9 +27,9 @@ const AboutUs = () => {
     return (
         <div>
             <Navbar />
-            <Title>Rólunk</Title>
             <Container>
-                <Image src="https://i.postimg.cc/Jh4ZGLkt/Organigram.png"/>
+            <Title>Rólunk</Title>
+                <Image src="https://i.ibb.co/LSjxGMC/organigram2.png"/>
                 
             </Container>
             <Newsletter />

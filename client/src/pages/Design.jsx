@@ -43,7 +43,7 @@ const Title = styled.h1`
 `
 
 const Button = styled.button`
-  width: 100%;
+  width: 103%;
   height: 50px;
   padding: 10px;
   border: none;
@@ -54,6 +54,17 @@ const Button = styled.button`
   font-style: 18px;
   margin-top: 15px;
   margin-bottom: 30px;
+  &:hover{
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rebeccapurple 0 -3px 0 inset;
+  transform: translateY(-2px);
+  }
+  &:focus{
+    box-shadow: rebeccapurple 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rebeccapurple 0 -3px 0 inset;
+  }
+  &:active{
+    box-shadow: rebeccapurple 0 3px 7px inset;
+  transform: translateY(2px);
+  }
 
 `
 
@@ -180,7 +191,7 @@ const Design = () => {
             onChange={handleChange}
             value={data.title}
             required
-            pattern="^[A-Za-z0-9]{2,16}$"
+            pattern=".{2,30}"
             onInvalid={(e) => e.target.setCustomValidity("Valós weboldalcímet adjon meg!")}
             onInput={(e) => e.target.setCustomValidity("")} />
           <SelectsContainer>

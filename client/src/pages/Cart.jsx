@@ -300,12 +300,12 @@ let i=0
           <Summary>
             <SummaryTitle>TERV ÖSSZEGZÉSE</SummaryTitle>
             <SummaryItem>
-              <SummaryItemText>Termékek ára</SummaryItemText>
+              <SummaryItemText>Weboldal elkészítésének ára</SummaryItemText>
               <SummaryItemPrice>{totalcost} Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Szállítási költség</SummaryItemText>
-              <SummaryItemPrice>2000 Ft</SummaryItemPrice>
+              <SummaryItemText>Fizetendő előleg</SummaryItemText>
+              <SummaryItemPrice>{totalcost/2} Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Kedvezmény</SummaryItemText>
