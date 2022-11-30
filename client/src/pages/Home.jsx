@@ -8,7 +8,6 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
-import Slider3 from '../components/Slider3'
 
 
 
@@ -80,7 +79,7 @@ const Button =styled.button`
   padding-right: 16px;
   transition: box-shadow .15s,transform .15s;
   font-size: 18px;
-  
+
   &:hover{
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);

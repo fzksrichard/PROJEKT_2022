@@ -33,7 +33,8 @@ const Form = styled.form`
   border-radius: 10px;
   width: 30vw;
   overflow-y: scroll;
-  height: 90vh;
+  height: 85vh;
+  box-shadow: 0px 0px 10px black;
 `
 
 const Title = styled.h1`
@@ -53,7 +54,6 @@ const Button = styled.button`
   font-weight: bold;
   font-style: 18px;
   margin-top: 15px;
-  margin-bottom: 30px;
   &:hover{
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rebeccapurple 0 -3px 0 inset;
   transform: translateY(-2px);

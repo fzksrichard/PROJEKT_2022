@@ -41,10 +41,11 @@ const Top = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px;
-  height: 22vh;
+  width: 50%;
+  height: 80%;
   object-fit: contain;
   ${mobile({ height: "40vh" })}
+  margin-top: 10px;
 `;
 
 const TopButton = styled.button`
@@ -85,7 +86,15 @@ const Details = styled.div`
   justify-content: space-around;
 `;
 
-const ProductName = styled.span``;
+const DetailPerLine = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`
+
+const ProductName = styled.div`
+  margin: 10px;
+`;
 
 const ProductId = styled.span``;
 
@@ -173,40 +182,40 @@ const Cart = () => {
     setStripeToken(token);
   };
 
-let totalcost=0
-let cost=0
-let costperorder=[]
-let i=0
-/*   for (let i = 0; i < cart.products.length; i++) {
-    let design=cart.products[i]
-    switch (design.type) {
-      case "webáruház": cost+=10000; break;
-      case "hírportál": cost+=15000; break;
-      case "portfólió": cost+=20000; break;
-      case "blog": cost+=5000; break;
-      case "fórum": cost+=1000; break;
-    }
-    design.cost=cost
-    totalcost+=cost
-    cost=0
-  } */
+  let totalcost = 0
+  let cost = 0
+  let costperorder = []
+  let i = 0
+  /*   for (let i = 0; i < cart.products.length; i++) {
+      let design=cart.products[i]
+      switch (design.type) {
+        case "webáruház": cost+=10000; break;
+        case "hírportál": cost+=15000; break;
+        case "portfólió": cost+=20000; break;
+        case "blog": cost+=5000; break;
+        case "fórum": cost+=1000; break;
+      }
+      design.cost=cost
+      totalcost+=cost
+      cost=0
+    } */
 
-  cart.products.map((product)=>{
+  cart.products.map((product) => {
     switch (product.type) {
-      case "webáruház": cost+=10000; break;
-      case "hírportál": cost+=15000; break;
-      case "portfólió": cost+=20000; break;
-      case "blog": cost+=5000; break;
-      case "fórum": cost+=1000; break;
+      case "webáruház": cost += 10000; break;
+      case "hírportál": cost += 15000; break;
+      case "portfólió": cost += 20000; break;
+      case "blog": cost += 5000; break;
+      case "fórum": cost += 1000; break;
     }
-    if (product.responsive) cost+=10000
-    if (product.logo) cost+=10000
-    cost+=product.menuitems*5000
-    costperorder[i++]=cost
-    totalcost+=cost
-    cost=0
+    if (product.responsive) cost += 10000
+    if (product.logo) cost += 10000
+    cost += product.menuitems * 5000
+    costperorder[i++] = cost
+    totalcost += cost
+    cost = 0
   })
-  i=0
+  i = 0
 
   useEffect(() => {
     const makeRequest = async () => {
@@ -261,28 +270,20 @@ let i=0
                       <b>Weboldal neve:</b> {product.title}
                     </ProductName>
                     <ProductName>
+                      <b>Weboldal tipusa:  </b> {product.type}
+                    </ProductName>
+                    <ProductName>
                       <b>Menüpontok száma:</b> {product.menuitems}
                     </ProductName>
                     <ProductName>
                       <b>Határidő:</b> {product.deadline}
                     </ProductName>
-                    <b>Válaszott szín:</b>
-                    <ProductColor color={product.color} />
-                    <ProductSize>
-                      <b>Weboldal tipusa:  </b> {product.type}
-                    </ProductSize>
-                    <ProductSize>
-                      <b>Weboldal Leirása:  </b> {product.desc}
-                    </ProductSize>
-                    <ProductSize>
-                      <b>Weboldal Céltipusa:  </b> {product.target}
-                    </ProductSize>
-                    <ProductSize>
-                      <b>Weboldal reszponziv-e? :  </b> {product.responsive ? "Igen" : "Nem" }
-                    </ProductSize>
-                    <ProductSize>
-                      <b>Szükséges logó is? :  </b> {product.logo ? "Igen" : "Nem" }
-                    </ProductSize>
+                    <ProductName>
+                      <b>Reszponzivitás:  </b> {product.responsive ? "Igen" : "Nem"}
+                    </ProductName>
+                    <ProductName>
+                      <b>Logo:  </b> {product.logo ? "Igen" : "Nem"}
+                    </ProductName>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>
@@ -305,7 +306,7 @@ let i=0
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Fizetendő előleg</SummaryItemText>
-              <SummaryItemPrice>{totalcost/2} Ft</SummaryItemPrice>
+              <SummaryItemPrice>{totalcost / 2} Ft</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Kedvezmény</SummaryItemText>
@@ -313,7 +314,7 @@ let i=0
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Teljes összeg</SummaryItemText>
-              <SummaryItemPrice>{totalcost} Ft</SummaryItemPrice>
+              <SummaryItemPrice>{totalcost / 2} Ft</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
               name="DAC rendelés"
