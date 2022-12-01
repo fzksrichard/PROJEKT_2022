@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
-import Ann from "../components/Announcement"
 import Products from "../components/Products"
 import Footer from "../components/Footer"
 import Newsletter from "../components/Newsletter"
@@ -61,7 +60,6 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar/>
-      <Ann/>
       <Title>{cat}</Title>
       <FilterContainer>
         <Filter>

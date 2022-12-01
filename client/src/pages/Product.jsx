@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Navbar from "../components/Navbar"
-import Ann from "../components/Announcement"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 import { Add, Remove } from '@material-ui/icons'
@@ -159,7 +158,6 @@ const Product = () => {
     return (
     <Container>
       <Navbar/>
-      <Ann/>
       <Wrapper>
         <ImgContainer>
             <Image src={product.img}/>
