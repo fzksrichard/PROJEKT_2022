@@ -6,8 +6,6 @@ import FormInput from '../components/FormInput'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import { useNavigate, Link} from "react-router-dom";
-import { userRequest } from "../requestMethods";
-import { useSelector } from 'react-redux'
 import FormInputSub from '../components/FormInputSub'
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
@@ -103,8 +101,6 @@ const Error = styled.span`
 
 
 const Design = () => {
-
-  const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
   const Navigate=useNavigate();
   const [data, setData] = useState({
