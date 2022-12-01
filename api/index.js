@@ -4,10 +4,7 @@ const mongoose=require("mongoose");
 const dotenv=require("dotenv");
 const userRoute=require("./routes/user")
 const authRoute=require("./routes/auth")
-const productRoute=require("./routes/product")
 const sitedesignRoute=require("./routes/sitedesign")
-const cartRoute=require("./routes/cart")
-const orderRoute=require("./routes/order")
 const stripeRoute=require("./routes/stripe")
 var cors = require("cors");
 
@@ -31,10 +28,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/products", productRoute);
 app.use("/api/sitedesigns", sitedesignRoute)
-app.use("/api/carts", cartRoute);
-app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
 
 
