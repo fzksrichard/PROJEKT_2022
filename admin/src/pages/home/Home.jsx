@@ -51,10 +51,6 @@ export default function Home() {
     
   }, [MONTHS]);
 
-userStats.sort(function(a, b){
-    return a.total - b.total;
-});
-
   return (
     
     <div className="home">
