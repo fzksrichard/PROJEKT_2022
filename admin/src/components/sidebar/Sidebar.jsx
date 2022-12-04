@@ -142,13 +142,7 @@ export default function Sidebar() {
                 <PermIdentity className="sidebarIcon" />
                 Felhasználók
               </li>
-            </Link>
-            <Link to="/products" className="link">
-              <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                Termékek
-              </li>
-            </Link>        
+            </Link>     
           </ul>
         </div>     
       </div>

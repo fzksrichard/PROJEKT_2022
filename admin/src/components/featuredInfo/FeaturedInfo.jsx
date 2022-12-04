@@ -25,7 +25,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Bevétel</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">${income[1]?.total}</span>
+          <span className="featuredMoney">{income[1]?.total} Ft</span>
           <span className="featuredMoneyRate">
             %{Math.floor(perc)}{" "}
             {perc < 0 ? (
@@ -40,7 +40,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Eladások</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$4,415</span>
+          <span className="featuredMoney">200 000 Ft</span>
           <span className="featuredMoneyRate">
             -1.4 <ArrowDownward className="featuredIcon negative" />
           </span>
@@ -50,7 +50,7 @@ export default function FeaturedInfo() {
       <div className="featuredItem">
         <span className="featuredTitle">Költségek</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,225</span>
+          <span className="featuredMoney">100 000 Ft</span>
           <span className="featuredMoneyRate">
             +2.4 <ArrowUpward className="featuredIcon" />
           </span>

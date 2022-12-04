@@ -45,6 +45,12 @@ export default function User() {
               </span>
             </div>
             <div className="userShowInfo">
+              <PermIdentity className="userShowIcon" />
+              <span className="userShowInfoTitle">
+                Email-cím: {user.email}
+              </span>
+            </div>
+            <div className="userShowInfo">
               <CalendarToday className="userShowIcon" />
               <span className="userShowInfoTitle">
                 Létrehozva: ({user.createdAt})
