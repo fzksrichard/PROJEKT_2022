@@ -34,6 +34,9 @@ export default function Home() {
     const getStats = async () => {
       try {
         const res = await userRequest.get("/users/stats");
+        res.data.sort(function(a, b){
+          return a._id - b._id;
+      });
         res.data.map((item) =>
           setUserStats((prev) => [
             
@@ -47,6 +50,10 @@ export default function Home() {
     getStats();
     
   }, [MONTHS]);
+
+userStats.sort(function(a, b){
+    return a.total - b.total;
+});
 
   return (
     

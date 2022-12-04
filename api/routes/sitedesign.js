@@ -14,9 +14,10 @@ router.post("/", async (req, res)=>{
 })
 
 router.get("/", verifyTokenAndAdmin, async (req, res) => {
-    try {
-      const siteDesign = await SiteDesign.find();
-      res.status(200).json(siteDesign);
+  const query = req.query.new;  
+  try {
+      const sitedesign = query ? await SiteDesign.find().sort({ _id: -1 }).limit(5) : await SiteDesign.find();
+      res.status(200).json(sitedesign);
     } catch (err) {
       res.status(500).json(err);
     }

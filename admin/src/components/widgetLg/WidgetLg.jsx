@@ -9,7 +9,7 @@ export default function WidgetLg() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get("sitedesigns");
+        const res = await userRequest.get("sitedesigns/?new=true");
         setOrders(res.data);
       } catch {}
     };
@@ -28,7 +28,7 @@ export default function WidgetLg() {
           <th className="widgetLgTh">Vásárló ID</th>
           <th className="widgetLgTh">Dátum</th>
           <th className="widgetLgTh">Végösszeg</th>
-          <th className="widgetLgTh">Állapota</th>
+          <th className="widgetLgTh">Állapot</th>
         </tr>
         {orders.map((order) => (
           <tr className="widgetLgTr" key={order._id}>
