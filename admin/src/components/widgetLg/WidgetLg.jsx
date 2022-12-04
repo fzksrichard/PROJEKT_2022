@@ -25,6 +25,7 @@ export default function WidgetLg() {
       <h3 className="widgetLgTitle">Legutóbbi rendelések</h3>
       <table className="widgetLgTable">
         <tr className="widgetLgTr">
+        <th className="widgetLgTh">Rendelés ID</th>
           <th className="widgetLgTh">Vásárló ID</th>
           <th className="widgetLgTh">Dátum</th>
           <th className="widgetLgTh">Végösszeg</th>
@@ -32,11 +33,10 @@ export default function WidgetLg() {
         </tr>
         {orders.map((order) => (
           <tr className="widgetLgTr" key={order._id}>
-            <td className="widgetLgUser">
-              <span className="widgetLgName">{order.userId}</span>
-            </td>
+            <td className="widgetLgName">{order._id}</td>
+            <td className="widgetLgName">{order.userId}</td>
             <td className="widgetLgDate">{format(order.createdAt)}</td>
-            <td className="widgetLgAmount">${order.amount}</td>
+            <td className="widgetLgAmount">{order.amount} Ft</td>
             <td className="widgetLgStatus">
               <Button type={order.status} />
             </td>
