@@ -184,6 +184,7 @@ const Design = () => {
                 <Option value="hírportál">Hírportál</Option>
                 <Option value="portfólió">Portfólió</Option>
                 <Option value="blog">Blog</Option>
+                <Option value="admin">Admin oldal</Option>
                 <Option value="fórum">Közösségi média, fórum</Option>
               </Select>
             </SelectContainer>

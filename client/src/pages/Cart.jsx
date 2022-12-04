@@ -207,6 +207,7 @@ const Cart = () => {
       case "portfólió": cost += 20000; break;
       case "blog": cost += 5000; break;
       case "fórum": cost += 1000; break;
+      case "admin": cost += 10000; break;
     }
     if (product.responsive) cost += 10000
     if (product.logo) cost += 10000

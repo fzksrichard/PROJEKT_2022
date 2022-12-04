@@ -62,13 +62,14 @@ const Success = (e) => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "url(https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?w=2000)"
+        background: "radial-gradient(circle, rgba(63,212,251,0.45451684091605393) 0%, rgba(234,70,252,0.17440479609812676) 100%)"
       }}
     >
       {orderId
         ? `A megrendelésed sikeresen rögzítve. A rendelésed azonosítója: ${orderId}`
         : `Successfull. Your order is being prepared...`}
-
+        <div>
+        {orderId && "Csapatunk hamarosan felveszi Önnel a kapcsolatot..."}</div>
       <button onClick={handleDelete} style={{ padding: 10, marginTop: 20 }}>
         Ugrás a főoldalra
       </button>
