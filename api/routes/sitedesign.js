@@ -13,6 +13,15 @@ router.post("/", async (req, res)=>{
     }
 })
 
+router.get("/", verifyTokenAndAdmin, async (req, res) => {
+    try {
+      const siteDesign = await SiteDesign.find();
+      res.status(200).json(siteDesign);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 //UPDATE: kellhet a projekthez is
 
 module.exports = router;

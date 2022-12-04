@@ -9,7 +9,7 @@ export default function WidgetLg() {
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await userRequest.get("orders");
+        const res = await userRequest.get("sitedesigns");
         setOrders(res.data);
       } catch {}
     };
@@ -22,7 +22,7 @@ export default function WidgetLg() {
   };
   return (
     <div className="widgetLg">
-      <h3 className="widgetLgTitle">Legutóbbi vásárlások</h3>
+      <h3 className="widgetLgTitle">Legutóbbi rendelések</h3>
       <table className="widgetLgTable">
         <tr className="widgetLgTr">
           <th className="widgetLgTh">Vásárló ID</th>
