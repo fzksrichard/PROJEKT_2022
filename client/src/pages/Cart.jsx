@@ -309,10 +309,6 @@ const Cart = () => {
               <SummaryItemText>Fizetendő előleg</SummaryItemText>
               <SummaryItemPrice>{totalcost / 2} Ft</SummaryItemPrice>
             </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Kedvezmény</SummaryItemText>
-              <SummaryItemPrice>2000 Ft</SummaryItemPrice>
-            </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Teljes összeg</SummaryItemText>
               <SummaryItemPrice>{totalcost / 2} Ft</SummaryItemPrice>
@@ -323,8 +319,8 @@ const Cart = () => {
               billingAddress
               shippingAddress
               currency='HUF'
-              description={`Fizetendő összeg: ${totalcost} Ft`}
-              amount={totalcost * 100}
+              description={`Fizetendő összeg: ${totalcost/2} Ft`}
+              amount={totalcost/2 * 100}
               token={onToken}
               stripeKey={KEY}
 

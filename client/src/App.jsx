@@ -3,6 +3,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Success from "./pages/Success";
+import Reference from "./pages/Reference";
+import Design from "./pages/Design";
+import AboutUs from "./pages/AboutUs";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,9 +14,7 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux"
 import { useEffect } from "react";
-import Reference from "./pages/Reference";
-import Design from "./pages/Design";
-import AboutUs from "./pages/AboutUs";
+
 
 const App = () => {
   useEffect(() => { document.title = "Projekt 2022" }, []);
