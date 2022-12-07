@@ -72,7 +72,7 @@ const SelectsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 10px 0;
+    margin: 10px 0 20px 0;
 `
 
 const SelectContainer = styled.div`
@@ -108,7 +108,9 @@ const Design = () => {
     desc: "",
     target: "",
     responsive: false,
-    logo: false
+    logo: false,
+    sourcemedia: false,
+    link: ""
   });
   const [inputfieldsToAdd, setInputfieldsToAdd] = useState(0);
 
@@ -242,6 +244,23 @@ const Design = () => {
             <input type="checkbox" name="logo" onClick={(ev) => handleClick(ev)} />
             </SelectContainer>
           </SelectsContainer>
+          <SelectsContainer>
+            <SelectContainer>
+            <Label>Saját multimédiás tartalmak, szövegek</Label>
+            <input type="checkbox" name="sourcemedia" onClick={(ev) => handleClick(ev)} />
+            </SelectContainer>
+          </SelectsContainer>
+          {data.sourcemedia && 
+          <FormInput
+          label="Link a weboldalon elhelyezendő szövegekhez, képekhez"
+          placeholder="pl. Google Drive, Dropbox, OneDrive, stb."
+          type="text"
+          name="link"
+          onChange={handleChange2}
+          required
+          onInvalid={(e) => e.target.setCustomValidity("Lehetséges menüpontok száma max 6!")}
+          onInput={(e) => e.target.setCustomValidity("")} />
+          }
           <FormInput
             label="Határidő"
             name="deadline"

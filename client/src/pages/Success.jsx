@@ -39,7 +39,8 @@ const Success = (e) => {
             desc: item.desc,
             target: item.target,
             responsive: item.responsive,
-            logo: item.logo,  
+            logo: item.logo, 
+            link: item.link
           })),
           amount: totalcost,
           address: data.billing_details.address,

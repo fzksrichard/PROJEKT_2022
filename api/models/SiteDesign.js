@@ -15,6 +15,7 @@ const SiteDesignSchema=new mongoose.Schema(
         target: {type: String, required: true},
         responsive: {type: Boolean, required: true},
         logo: {type: Boolean, required: true},
+        link:{type: String, required: false},
         },
         ],
         amount: {type:Number, required: true},

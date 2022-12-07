@@ -212,6 +212,7 @@ const Cart = () => {
     if (product.responsive) cost += 10000
     if (product.logo) cost += 15000
     cost += product.menuitems * 20000
+    if (!product.sourcemedia) cost+=25000;
     costperorder[i++] = cost
     totalcost += cost
     cost = 0
