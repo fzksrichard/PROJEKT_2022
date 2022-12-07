@@ -36,12 +36,10 @@ const ImgContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
 `
 
 const Image=styled.img`
   height: 450px;
-  margin-bottom: 50px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.352), 0 6px 20px 0 rgba(0, 0, 0,  0.352);
 `
 
@@ -54,7 +52,7 @@ const ButtonContainer=styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0 0 80px;
+  margin: 20px 0 0 80px;
 `
 
 const Button =styled.button`
@@ -96,11 +94,12 @@ const Home = () => {
     <div>
       <Navbar />
       <Welcome>
+
+      <Container>
+      <DescContainer>
       <Title>
         <img src="https://i.postimg.cc/wvzF82KR/DAC.png"/>
       </Title>
-      <Container>
-      <DescContainer>
           <Text>
           Napjainkban elengedhetetlen egy vállalkozás számára egy weboldal, ugyanis ennek hiánya versenyhátrányt jelenthet a piacon a konkurens vállalatokkal szemben. Az emberek nagy része az interneten keresztül tájékozódik. A legtöbb vállalkozás külső informatikai céget bízik meg ennek elkészítésével. Ezen cégek felkeresése sokszor időigényes és nem is igazán lehet eldönteni, melyik cég lenne a legalkalmasabb. Az árakkal sincsenek tisztában, hiszen irányárak feltüntetése nem takarja a végleges árat, ami minden egyes megrendelőnél személyre szabott az igényeiknek megfelelően. Tehát az esetek túlnyomó többségében a személyes konzultáció elengedhetetlen a végleges árajánlat kialakításhoz. Mi cégünk megoldással szeretne szolgálni az előbb említett problémára. Ez egy olyan felület, ahol az ügyfelek nagy vonalakban megtervezhetik a személyes, üzleti, stb. céljaikat szolgáló weboldalakat. A tervezési folyamat, attól függően, hogy mit akar terveztetni a felhasználó, űrlapokon keresztül menne végbe.
           </Text>

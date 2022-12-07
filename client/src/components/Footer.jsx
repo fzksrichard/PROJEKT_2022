@@ -91,12 +91,6 @@ const Footer = () => {
                         <Instagram />
                     </SocialIcon>
                     </a>
-                    <SocialIcon color="55ACEE">
-                        <Twitter />
-                    </SocialIcon>
-                    <SocialIcon color="E60023">
-                        <Pinterest />
-                    </SocialIcon>
                 </SocialContainer>
             </Left>
             <Center>

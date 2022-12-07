@@ -202,16 +202,16 @@ const Cart = () => {
 
   cart.products.map((product) => {
     switch (product.type) {
-      case "webáruház": cost += 10000; break;
-      case "hírportál": cost += 15000; break;
-      case "portfólió": cost += 20000; break;
-      case "blog": cost += 5000; break;
-      case "fórum": cost += 1000; break;
-      case "admin": cost += 10000; break;
+      case "webáruház": cost += 50000; break;
+      case "hírportál": cost += 40000; break;
+      case "portfólió": cost += 30000; break;
+      case "blog": cost += 20000; break;
+      case "fórum": cost += 35000; break;
+      case "admin": cost += 15000; break;
     }
     if (product.responsive) cost += 10000
-    if (product.logo) cost += 10000
-    cost += product.menuitems * 5000
+    if (product.logo) cost += 15000
+    cost += product.menuitems * 20000
     costperorder[i++] = cost
     totalcost += cost
     cost = 0
