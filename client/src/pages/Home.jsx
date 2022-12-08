@@ -8,13 +8,13 @@ import Newsletter from '../components/Newsletter'
 
 
 
-const Welcome=styled.div`
+const Welcome = styled.div`
   display: flex;
   flex-direction: column;
   background: radial-gradient(circle, rgba(63,212,251,0.45451684091605393) 0%, rgba(234,70,252,0.17440479609812676) 100%);
 `
 
-const Title=styled.h1`
+const Title = styled.h1`
 
   margin:30px 0 0 80px;
 `
@@ -38,24 +38,31 @@ const ImgContainer = styled.div`
   justify-content: center;
 `
 
-const Image=styled.img`
+const Image = styled.img`
   height: 450px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.352), 0 6px 20px 0 rgba(0, 0, 0,  0.352);
 `
 
-const Text=styled.div`
-  text-align: justify;
-  margin: 50px 0px 0 80px;
+const Text = styled.div`
+  text-align: center;
+  margin: 20px 0 0 80px;
   line-height: 1.6;
 `
-const ButtonContainer=styled.div`
+
+const Text2 = styled.div`
+font-size: 25px;
+  text-align: center;
+  margin: 30px 0 0 80px;
+  line-height: 1.6;
+`
+const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 0 0 80px;
 `
 
-const Button =styled.button`
+const Button = styled.button`
     margin: 20px;
     padding: 10px;
     font-size:20px;
@@ -95,29 +102,33 @@ const Home = () => {
       <Navbar />
       <Welcome>
 
-      <Container>
-      <DescContainer>
-      <Title>
-        <img src="https://i.postimg.cc/wvzF82KR/DAC.png"/>
-      </Title>
-          <Text>
-          Napjainkban elengedhetetlen egy vállalkozás számára egy weboldal, ugyanis ennek hiánya versenyhátrányt jelenthet a piacon a konkurens vállalatokkal szemben. Az emberek nagy része az interneten keresztül tájékozódik. A legtöbb vállalkozás külső informatikai céget bízik meg ennek elkészítésével. Ezen cégek felkeresése sokszor időigényes és nem is igazán lehet eldönteni, melyik cég lenne a legalkalmasabb. Az árakkal sincsenek tisztában, hiszen irányárak feltüntetése nem takarja a végleges árat, ami minden egyes megrendelőnél személyre szabott az igényeiknek megfelelően. Tehát az esetek túlnyomó többségében a személyes konzultáció elengedhetetlen a végleges árajánlat kialakításhoz. Mi cégünk megoldással szeretne szolgálni az előbb említett problémára. Ez egy olyan felület, ahol az ügyfelek nagy vonalakban megtervezhetik a személyes, üzleti, stb. céljaikat szolgáló weboldalakat. A tervezési folyamat, attól függően, hogy mit akar terveztetni a felhasználó, űrlapokon keresztül menne végbe.
-          </Text>
-          
-          <ButtonContainer>
-          <Link to={"/design"}>
-          <Button style={!user ? { display: "none" } : {}}>TERVEZÉS ELKEZDÉSE</Button> </Link>
-          <Link to={"/register"}>
-          <Button style={user ? { display: "none" } : {}}>REGISZTRÁCIÓ</Button> </Link>
-          <Link to={"/login"}>
-          <Button style={user ? { display: "none" } : {}}>BEJELENTKEZÉS</Button> </Link>
-          </ButtonContainer>
-        </DescContainer>
-        <ImgContainer>
-        <Image src="https://i.ibb.co/TwBfLsR/homepage.png"/>
-        </ImgContainer>
-        
-      </Container>
+        <Container>
+          <DescContainer>
+            <Title>
+              <img src="https://i.postimg.cc/wvzF82KR/DAC.png" />
+            </Title>
+            <Text>
+              Nem tudod mennyibe kerülne 2022-ben az álom weboldalad elkészítése?
+            </Text>
+            <Text>
+              Nem akarsz cégről cégre járni, mire megkapnád a legoptimálisabb árajánlatot?
+            </Text>
+            <Text2>A DAC kiszámolja neked milyen anyagi vonzata van egyes weboldal funkcióknak.</Text2>
+            <Text2>SŐT! Még rendelést is adhat le nálunk.</Text2>
+            <ButtonContainer>
+              <Link to={"/design"}>
+                <Button style={!user ? { display: "none" } : {}}>TERVEZÉS ELKEZDÉSE</Button> </Link>
+              <Link to={"/register"}>
+                <Button style={user ? { display: "none" } : {}}>REGISZTRÁCIÓ</Button> </Link>
+              <Link to={"/login"}>
+                <Button style={user ? { display: "none" } : {}}>BEJELENTKEZÉS</Button> </Link>
+            </ButtonContainer>
+          </DescContainer>
+          <ImgContainer>
+            <Image src="https://i.ibb.co/TwBfLsR/homepage.png" />
+          </ImgContainer>
+
+        </Container>
       </Welcome>
       {/* <Slider3/>
         <Categories/>

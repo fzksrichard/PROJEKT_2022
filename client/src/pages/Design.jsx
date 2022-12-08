@@ -72,7 +72,7 @@ const SelectsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 15px 0;
 `
 
 const SelectContainer = styled.div`

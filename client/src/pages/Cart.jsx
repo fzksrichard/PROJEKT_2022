@@ -145,7 +145,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 40vh;
 `;
 
 const SummaryTitle = styled.h1`
@@ -186,33 +186,33 @@ const Cart = () => {
   let cost = 0
   let costperorder = []
   let i = 0
-  /*   for (let i = 0; i < cart.products.length; i++) {
-      let design=cart.products[i]
-      switch (design.type) {
-        case "webáruház": cost+=10000; break;
-        case "hírportál": cost+=15000; break;
-        case "portfólió": cost+=20000; break;
-        case "blog": cost+=5000; break;
-        case "fórum": cost+=1000; break;
-      }
-      design.cost=cost
-      totalcost+=cost
-      cost=0
-    } */
+
+  let current = new Date();
+  let deadline=new Date();
+  let help=[]
+  let days=0;
+  let difftime
 
   cart.products.map((product) => {
     switch (product.type) {
-      case "webáruház": cost += 50000; break;
-      case "hírportál": cost += 40000; break;
+      case "webáruház": cost += 150000; break;
+      case "hírportál": cost += 50000; break;
       case "portfólió": cost += 30000; break;
       case "blog": cost += 20000; break;
       case "fórum": cost += 35000; break;
       case "admin": cost += 15000; break;
     }
     if (product.responsive) cost += 10000
-    if (product.logo) cost += 15000
+    if (product.logo) cost += 20000
     cost += product.menuitems * 20000
-    if (!product.sourcemedia) cost+=25000;
+    if (!product.sourcemedia) cost+=30000;
+    deadline=new Date(product.deadline)
+    difftime = Math.abs(deadline - current);
+    days = Math.ceil(difftime / (1000 * 60 * 60 * 24)); 
+    if (days < 60) { cost+=50000; }
+    else if (days < 90) { cost+=30000; }
+    else if (days < 120) { cost+=15000; }
+    else if (days < 18) { cost+=5000; }
     costperorder[i++] = cost
     totalcost += cost
     cost = 0
@@ -279,6 +279,9 @@ const Cart = () => {
                     </ProductName>
                     <ProductName>
                       <b>Határidő:</b> {product.deadline}
+                    </ProductName>
+                    <ProductName>
+                      <b>Saját szövegek, képek, stb:  </b> {product.sourcemedia ? "Igen" : "Nem"}
                     </ProductName>
                     <ProductName>
                       <b>Reszponzivitás:  </b> {product.responsive ? "Igen" : "Nem"}
