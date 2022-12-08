@@ -20,7 +20,7 @@ const SiteDesignSchema=new mongoose.Schema(
         ],
         amount: {type:Number, required: true},
         address:{type:Object, required: true},
-        status: {type:String, default: "pending"},
+        status: {type:String, default: "elkészítés folyamatban"},
         
     }, 
     {timestamps: true}
