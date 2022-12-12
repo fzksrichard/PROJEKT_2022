@@ -319,7 +319,7 @@ const Cart = () => {
             </SummaryItem>
             <StripeCheckout
               name="DAC rendelés"
-              image="https://i.postimg.cc/wvzF82KR/DAC.png"
+              image="https://i.ibb.co/tMMVXsH/2022-12-12-13-37-27-GUI-Tervek-K-pek-Logo-Google-Docs.png"
               billingAddress
               shippingAddress
               currency='HUF'
