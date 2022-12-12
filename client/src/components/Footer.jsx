@@ -1,5 +1,6 @@
 import { Facebook, Instagram, MailOutline, Phone, Pinterest, Room, Twitter } from '@material-ui/icons'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
 
@@ -87,16 +88,18 @@ const Footer = () => {
                         </SocialIcon>
                     </a>
                     <a href="https://www.instagram.com/dac_design_create/">
-                    <SocialIcon color="E4405F">
-                        <Instagram />
-                    </SocialIcon>
+                        <SocialIcon color="E4405F">
+                            <Instagram />
+                        </SocialIcon>
                     </a>
                 </SocialContainer>
             </Left>
             <Center>
                 <Title>Hasznos linkek</Title>
                 <List>
-                    <ListItem>Adatvédelem</ListItem>
+                    <Link style={{ textDecoration: "none" }} to={"/policy"}>
+                        <ListItem>Adatvédelem</ListItem>
+                    </Link>
                     <ListItem>GYIK</ListItem>
                     <ListItem>Feltételek</ListItem>
                     <ListItem>Impresszum</ListItem>

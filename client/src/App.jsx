@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux"
 import { useEffect } from "react";
+import Policy from "./pages/Policy";
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/design" element={<Design />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/policy" element={<Policy />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
       </Routes>
