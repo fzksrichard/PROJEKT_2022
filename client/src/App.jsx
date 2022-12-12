@@ -15,6 +15,7 @@ import {
 import { useSelector } from "react-redux"
 import { useEffect } from "react";
 import Policy from "./pages/Policy";
+import Conditions from "./pages/Conditions";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/conditions" element={<Conditions />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
       </Routes>

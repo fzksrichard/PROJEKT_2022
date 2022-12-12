@@ -101,7 +101,9 @@ const Footer = () => {
                         <ListItem>Adatvédelem</ListItem>
                     </Link>
                     <ListItem>GYIK</ListItem>
-                    <ListItem>Feltételek</ListItem>
+                    <Link style={{ textDecoration: "none" }} to={"/conditions"}>
+                    <ListItem>Általános Szerződési Feltételek</ListItem>
+                    </Link>
                     <ListItem>Impresszum</ListItem>
                 </List>
             </Center>
