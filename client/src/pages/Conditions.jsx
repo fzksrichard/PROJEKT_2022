@@ -79,7 +79,29 @@ const Conditions = () => {
                     Szolgáltató haladéktalanul értesíti Felhasználót a tudomására jutott minden olyan körülményről, amely a Szolgáltatás teljesítését megakadályozná, vagy hátráltatná. Az értesítési kötelezettség elmulasztásával összefüggésbe hozható szolgáltatási szint csökkenés miatti felelősség a Szolgáltatót terheli.
 
                 </Text>
-                <SubTitle>3. A Szolgáltatás megrendelésének mente, feltételei</SubTitle>
+                <SubTitle>3. A Szolgáltatás megrendelésének menete, feltételei</SubTitle>
+                <Text>
+                    A Honlap tartalmának jelentős része elérhető minden Felhasználó számára, regisztráció nélkül is.
+                    Regisztrálni kizárólag a Honlapon keresztül, on-line regisztráció útján lehetséges.
+                    A Felhasználó kifejezetten tudomásul veszi, hogy amennyiben a regisztráció során úgy nyilatkozik, hogy az ÁSZF –et elolvasta, későbbiekben nem hivatkozhat arra, hogy annak tartalmát vele ténylegesen nem ismertetették, vagy azt nem ismerte meg.
+                    Felhasználó regisztrálni a kezdőoldal jobb felső sarkában található ember ikonra kattintva, majd a  „Regisztráció” feliratra kattintva tud. A regisztráció során Felhasználó köteles a regisztrációs adatlapot teljes körűen és szabályszerűen kitölteni és a jelen ÁSZF -et a kérelem elküldését megelőzően elolvasni azzal, hogy amennyiben azt nem fogadja el, úgy Szolgáltató nem fogadja el a regisztrációját és nem jogosult a Szolgáltatás igénybevételére sem.
+                </Text>
+                <Text>
+                    Felhasználó az adatbeviteli hibákat a megrendelés elküldését megelőzően bármikor javítani tudja a Honlapon, a „Profil” menüpontban. Ha Felhasználó a megrendelését már elküldte és a visszaigazoló emailben vesz észre hibát rendelésével kapcsolatban, akkor haladéktalanul vegye fel a Szolgáltatóval a kapcsolatot a probléma orvoslása és a nem kívánt megrendelések teljesítésének, szolgáltatás nyújtásának elkerülése érdekében.
+                </Text>
+                <Text>
+                    Felhasználó a kezdő oldal fejlécében található „Tervezés” menüpont alatt tudja elkezdeni a tervezést sablonok alapján.
+                    Megrendelést csak regisztrált Felhasználók kezdeményezhetnek, akkor, ha bejelentkezett a Honlapra és rákattint, az „Tervezés” gombra. A számlázási adatok bármikor módosíthatóak a „Profilom” menüponton belül.
+                    A megrendelés tehát az „Előfizetek” gombra kattintással történik, ami a Felhasználó részére fizetési kötelezettséget keletkeztet.
+                    Az előfizetés sikerességéről Szolgáltató emailben és a Honlap felületén egyaránt tájékoztatja a Felhasználót.
+
+                </Text>
+                <Text>
+                    Szolgáltató legkésőbb az ajánlat (megrendelés) megérkezését követő 48 órán belül automatikus visszaigazoló e-mail útján visszaigazolja a Felhasználó részére, hogy megrendelését a rendszer rögzítette. Az automatikus visszaigazoló email Felhasználóhoz történő megérkezésével érvényes szerződés jön létre Szolgáltató és Felhasználó között. Amennyiben a visszaigazoló email nem érkezik meg 48 órán belül a Felhasználóhoz, Felhasználó mentesül ajánlati kötöttsége alól, vagyis nem köteles a Szolgáltatás ellenértékét megfizetni és a Szolgáltatást igénybe venni.
+                </Text>
+                <Text>
+
+                </Text>
                 <SubTitle>4. Felmondási Jog</SubTitle>
                 <Text>
                     Az e pontban foglaltak kizárólag a szakmája, önálló foglalkozása vagy üzleti tevékenysége körén kívül eljáró természetes személyre vonatkoznak, aki árut vesz, rendel, kap, használ, igénybe vesz, valamint az áruval kapcsolatos kereskedelmi kommunikáció, ajánlat címzettje (fogyasztó).
